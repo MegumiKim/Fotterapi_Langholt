@@ -1,5 +1,5 @@
 <header>
-	<a href="/" class="logo">Fotterapi Langholt</a>
+	<a href="/" class="logo"><img src="/asset/fotterapi_logo.jpg" alt=""></a>
 
 	<div>
 		<a href="">Om</a>
@@ -9,6 +9,10 @@
 
 <style lang="scss">
 	/* @use '$lib/styling/typography' as typography; */
+
+	.logo {
+		width: 15%;
+	}
 	// Nav bar
 	header {
 		color: black;

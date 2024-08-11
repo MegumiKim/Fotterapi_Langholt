@@ -1,3 +1,7 @@
+@use 'sass:math';
+@use '$lib/styling/breakpoints';
+@use '$lib/styling/typography';
+
 *,
 *::before,
 *::after {
@@ -16,4 +20,44 @@ body {
 
 img {
 	max-width: 100%;
+}
+
+// grid system
+
+$bleed: (
+	small: 30px,
+	medium: 64px,
+	large: 3vw //large: 2.0834vw
+);
+
+$columns: 18;
+$gutters: (
+	small: 10px,
+	medium: 20px,
+	large: 2vw
+);
+
+:root {
+	@each $breakpoint, $gutter in $gutters {
+		@include breakpoints.mq($breakpoint) {
+			--gutter: #{$gutter};
+		}
+	}
+
+	@each $breakpoint, $b in $bleed {
+		@include breakpoints.mq($breakpoint) {
+			--bleed: #{$b};
+			--bleed-negative: #{-$b};
+		}
+	}
+}
+// Grid
+.container {
+	padding-left: var(--bleed);
+	padding-right: var(--bleed);
+
+	&--negative {
+		margin-left: var(--bleed-negative);
+		margin-right: var(--bleed-negative);
+	}
 }

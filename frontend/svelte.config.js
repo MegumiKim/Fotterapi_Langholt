@@ -6,11 +6,11 @@ const config = {
 	preprocess: vitePreprocess(),
 	kit: {
 		// https://docs.sst.dev/constructs/SvelteKitSite
-		adapter: adapter()
-		// alias: {
-		// 	$styles: 'src/routes/styles',
-		// 	$sst: 'sst'
-		// }
+		adapter: adapter(),
+		alias: {
+			$styles: 'src/routes/styles',
+			$sst: 'sst'
+		}
 	},
 	preprocess: vitePreprocess(),
 	exclude: [

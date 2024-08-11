@@ -1,10 +1,11 @@
-<header>
+<header class="container">
 	<a href="/" class="logo"><img src="/asset/fotterapi_logo.jpg" alt=""></a>
 
-	<div>
-		<a href="">Om</a>
+	<nav >
+		<a href="" >Om</a>
 		<a href="">Behandlinger</a>
-	</div>
+		<a href="">Bestill Time</a>
+	</nav>
 </header>
 
 <style lang="scss">

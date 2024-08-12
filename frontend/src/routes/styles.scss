@@ -53,11 +53,54 @@ $gutters: (
 }
 // Grid
 .container {
+	margin: auto;
+	max-width: 1200px;
 	padding-left: var(--bleed);
 	padding-right: var(--bleed);
 
 	&--negative {
 		margin-left: var(--bleed-negative);
 		margin-right: var(--bleed-negative);
+	}
+}
+
+//buttons
+
+button,
+.btn {
+	border: gray solid 3px;
+	background-color: inherit;
+	padding: 1em 2em;
+	border-radius: 20px;
+	font-size: 1em;
+	cursor: pointer;
+	margin: 2em auto;
+	display: block;
+}
+
+button:focus,
+button:hover {
+	transform: scale(1.2);
+}
+
+button:active {
+	transform: scale(1);
+}
+
+.flex {
+	display: flex;
+	flex-direction: column;
+	gap: 3em;
+	@include breakpoints.mq(medium) {
+		flex-direction: row;
+		justify-content: center;
+		// align-items: center;
+	}
+
+	img,
+	p,
+	div {
+		flex: 1;
+		max-width: 350px;
 	}
 }

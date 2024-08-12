@@ -1,73 +1,79 @@
-<!-- <h1>Fotterapi Langholt</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p> -->
-
 <script>
-	export let data;
+	import Locations from '../components/Locations.svelte';
+import MainMenu from '../components/MainMenu.svelte';
+import WelcomeBanner from '../components/WelcomeBanner.svelte';
+export let data;
+
 
 </script>
 
+<WelcomeBanner />
 
-<section id="welcome">
-  <div>
-    <img src="/asset/test.jpg" alt="">
-  </div>
-  <h1 class="title">Fotterapi Langholt</h1>
-</section>
-<section id="main_menu" class="container">
-<div class="main-menu-btn">Om</div>
-<div class="main-menu-btn">Behandlinger</div>
-<div class="main-menu-btn">Bestill Time</div>
-</section>
+<!-- <MainMenu /> -->
+
 <section id="om" class="container">
   <div class="inner-wrapper-om">
-    <h2>Fotterapi</h2>
-    <p>Som autorisert fotterapeut med helsefaglig kompetanse på fot og ankel,  behandler jeg lidelser knyttet til hud, negler, skjelett og muskler. Klinikken har lune og lyse lokaler på Ranvik i Sandefjord.</p>
+    <h2>Autorisert Fotterapeut</h2>
+    <div class="autorisert-wrapper"><img src="asset/autorisert.jpeg" alt=""></div>
+
+    <p> Med spesialisert utdanning og sertifisering hjelper jeg med alt fra inngrodde negler og hard hud til forebyggende fotpleie. Jeg bruker kun høykvalitetsprodukter og følger strenge hygienestandarder.  </p>
     <a href="#" class="btn">Bestill Time</a>
   </div>
 </section>
-<section class="container">
-  <h2>Lokaler & Åpeningstider</h2>
-
-  <h3>Klinikken i Larvik</h3>
-  <p>Mandag: 9:00 - 15:00</p>
-  <p>Torsdag: 9:00 - 15:00</p>
-
-  <h3>Starvarn Sykehjem</h3>
-  <p>Onsdag: 9:00 - 15:00</p>
-
-  <h3>Hjemme besøktjeneste</h3>
-  <p>Etter avtale</p>
 
 
+<section class="flex container">
+  <div>
+    <p>Jeg tilbyr behandlinger både på min klinikk i Larvik sentrum på mandager og torsdager, samt på Stavern Sykehjem på onsdager. På fredager tilbyr jeg hjemmebesøk for de som trenger det. Klinikken holder stengt i helgene.</p>
 
 
+  </div>
+<div><img src="asset/logo.jpg" alt=""></div>
 </section>
+
+
+
+<Locations />
+
+
 
 
 
 <style lang="scss">
 
-  #main_menu{
-    display: flex;
-    justify-content: space-between;
-  }
 
-.main-menu-btn {
-  border-radius: 50%;
-  border: 5px black solid;
-  height: 5em;
-  width: 5em;
-  align-content: center;
-  text-align: center;
+img{
+  margin: auto;
+  display: block;
+  width: 100%;
+  max-width: 400px;
 }
+
+.autorisert-wrapper{
+
+  display: flex;
+  justify-content: center;
+img{
+  max-width: 100px;
+}
+}
+
 
 #om {
   text-align: center;
+  /* background: rgb(79, 95, 93);
+  color: white; */
+  padding: 2em 0;
 }
 
 .inner-wrapper-om {
   max-width: 500px;
 margin: 10% auto;
-
 }
+
+div p {
+  text-align: center;
+}
+
+
 </style>

@@ -11,14 +11,14 @@
 </script>
 
 
-<header class:visible={headerVisible} class="container">
+<header class:visible={headerVisible} >
 	<!-- <a href="/" class="logo"><img src="/asset/logo.jpg" alt=""></a> -->
 
 	<nav>
 		<a href="/" >Home</a>
-		<a href="" >Om</a>
-		<a href="">Behandlinger</a>
-		<a href="https://helse.aspit.no/landing?clinicId=26d5e3e0-768c-4e24-9af8-7b34f181db8a&fbclid=IwY2xjawEnOGhleHRuA2FlbQIxMAABHYYMx6WWrAOXCYVEoNRczEKFTLNQLMU93TIhevFGtQ_WW2MzS0Vn2iTuYg_aem_9qtup80mJ93Uavt4Cbs1fQ">Bestill Time</a>
+		<a href="/om" >Om</a>
+		<a href="/behandlinger">Behandlinger</a>
+		<a target="_blank" href="https://helse.aspit.no/landing?clinicId=26d5e3e0-768c-4e24-9af8-7b34f181db8a&fbclid=IwY2xjawEnOGhleHRuA2FlbQIxMAABHYYMx6WWrAOXCYVEoNRczEKFTLNQLMU93TIhevFGtQ_WW2MzS0Vn2iTuYg_aem_9qtup80mJ93Uavt4Cbs1fQ">Bestill Time</a>
 	</nav>
 </header>
 
@@ -27,12 +27,13 @@
 
 	// Nav bar
 	header {
-		background: #fff;
-		color: black;
+		z-index: 1000;
 		position: sticky;
+		background: #fff;
 		top: 0;
-		padding-top: 1em;
-		padding-bottom: 1em;
+		padding-top: 2em;
+		padding-bottom: 2em;
+		width: 100%;
 		transition:
 			color 0.3s ease,
 			transform 0.5s ease;
@@ -53,6 +54,7 @@
 		width: 100%;
 		justify-content: center;
 		gap: 2em;
+		font-weight: 300;
 		@include typography.details;
 	}
 

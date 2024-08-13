@@ -3,11 +3,12 @@
   <h2>Lokaler & Åpeningstider</h2>
 
 
-  <p>Tel/SMS: 904 24 340</p>
+
   <div class="location-wrapper">
     <div>
       <h3>Klinikken i Larvik</h3>
       <p class="">Nansetgata 68, 3257 Larvik</p>
+      <p>Tel/SMS: 904 24 340</p>
       <p>Mandag: 9:00 - 15:00</p>
       <p>Torsdag: 9:00 - 15:00</p>
     </div>
@@ -26,12 +27,12 @@
 
   <div class="location-wrapper">
 
-<div >
-  
-      <h3>Hjemme besøktjeneste</h3>
-      <p>Etter avtale</p>
-</div>
-<div></div>
+      <div>
+        <h3>Hjemme besøktjeneste</h3>
+        <p>Etter avtale</p>
+      </div>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2054.9816545803806!2d10.02259911284994!3d58.99877183732971!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4646e94e1284c047%3A0xc628407e2252a7bc!2sStavern%20sykehjem!5e0!3m2!1sno!2sno!4v1723486786441!5m2!1sno!2sno" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
 </div>
 
 
@@ -64,5 +65,15 @@ gap: 3em;
     flex: 1;
     max-width: 350px;
   }
+  h3{
+    text-align: start;
+  }
+  p{
+    margin-bottom: 0;
+  }
+}
+
+iframe{
+  max-width: 100%;
 }
 </style>

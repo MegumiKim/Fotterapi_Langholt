@@ -10,7 +10,9 @@
 
 <style lang='scss'>
 
+
   #welcome {
+    padding: 0;
     max-width: 1300px;
     margin: auto;
     position: relative;  
@@ -36,9 +38,6 @@
         color: white;
       }
 
-      p{
-
-      }
     }
   }
 </style>

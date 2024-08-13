@@ -47,7 +47,7 @@
 }
 
 @mixin details {
-	font-weight: 400;
+	// font-weight: 400;
 	font-size: 0.8rem;
 
 	@include mq(large) {
@@ -68,10 +68,13 @@ h6 {
 
 h1 {
 	@include title;
+	font-family: 'Bodoni Moda SC', serif;
+	font-optical-sizing: auto;
 }
 
 h2 {
 	@include subtitle;
+	// font-family: 'Bodoni Moda SC', serif;
 }
 
 h3 {

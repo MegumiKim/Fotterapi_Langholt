@@ -1,8 +1,8 @@
-<footer>
+<footer class="container">
 
 
   <p>Fotterapi Langholt © 2019. Org.nr. 918 425 195</p>
-    <img src="/asset/autorisert.jpeg" alt="Autorisert Fotterapeut">
+    <!-- <div><img src="/asset/logo.jpg" alt="Autorisert Fotterapeut"></div> -->
 
 </footer>
 
@@ -11,16 +11,14 @@
 @use '$lib/styling/typography' as typography;
 
 footer {
+  font-family: 'Bodoni Moda SC', serif;
+padding: 2em;
+  margin-top: 4em;
 
   img {
-    max-height: inherit;
+ max-width: 150px;
   }
-  max-height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1em;
-  padding: var(--bleed);
+
 
 }
 </style>

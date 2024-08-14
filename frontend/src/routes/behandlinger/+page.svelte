@@ -24,7 +24,12 @@
 </script>
 
 
-<h1>Behandlinger</h1>
+<section class="container">
+  <h1>Behandlinger</h1>
+
+
+
+</section>
 
 
 <section class="container behandlinger">
@@ -56,7 +61,7 @@
 
 <style lang="scss">
 
-h1 {
+/* h1 {
   margin-top: 0;
   padding: 1em;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("asset/fotterapi_image.jpg");
@@ -64,7 +69,7 @@ h1 {
   background-size: cover;
   background-blend-mode: darken;
   color: white;
-}
+} */
 
 .behandlinger{
   display: flex;

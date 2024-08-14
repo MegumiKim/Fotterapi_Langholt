@@ -12,7 +12,7 @@
       price:'800 ~'
     },
     {
-      title:'Fjerne torn eller fotvorte',
+      title:'Fjerne torn/fotvorte',
       desc:'Består av fjerning med skalpell, sliping, påføring av middel(fotvorte) og avlastning i filt for smertelindring.',
       price:'300 ~'
     },
@@ -34,7 +34,7 @@
   <div class="flex">
 <div>
   <h2>{behandling.title}</h2>
-<p class="">NOK: {behandling.price}</p> 
+<p class="price">NOK: {behandling.price}</p> 
 </div>
 <div>
   <p>{behandling.desc}</p>
@@ -57,6 +57,7 @@
 <style lang="scss">
 
 h1 {
+  margin-top: 0;
   padding: 1em;
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("asset/fotterapi_image.jpg");
   height: 50vh;
@@ -76,14 +77,19 @@ h1 {
     }
   }
 
+  .price {
+    margin-top: 0.5em;
+    &:before{
+      content: "| ";
+    }
+  }
+
   h2{
-    margin-top: 0em;
-  }
-
-  .price{
     font-family: 'Bodoni Moda SC', serif;
-
+    line-height: 1em;
+    margin: 0em auto;
   }
+
   img{
     aspect-ratio: 1;
     width: 100%;

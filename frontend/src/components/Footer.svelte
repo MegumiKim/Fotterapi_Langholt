@@ -14,6 +14,7 @@ footer {
   font-family: 'Bodoni Moda SC', serif;
 padding: 2em;
   margin-top: 4em;
+  text-align: center;
 
   img {
  max-width: 150px;

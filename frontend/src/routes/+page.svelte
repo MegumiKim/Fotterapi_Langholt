@@ -1,5 +1,6 @@
 <script>
 	import Locations from '../components/Locations.svelte';
+	import Marketing from '../components/Marketing.svelte';
 	import Reviews from '../components/Reviews.svelte';
 import WelcomeBanner from '../components/WelcomeBanner.svelte';
 export let data;
@@ -34,7 +35,7 @@ export let data;
 </section>
 
 <Reviews />
-
+<Marketing />
 <Locations />
 
 

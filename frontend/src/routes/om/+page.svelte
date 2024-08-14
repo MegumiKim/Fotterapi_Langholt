@@ -3,9 +3,9 @@
 
 
 
-  </section>
+</section>
 
-  <section>
+<section class="container">
     <div class="flex">
       <div>
         <h2>Fotterapi Langholt</h2>
@@ -18,14 +18,16 @@
           <p>Tel/SMS: 904 24 340</p>
       </div>
 
-      <img src="/asset/fotterapi_stole.jpg" alt="">
+      <div><img src="/asset/fotterapi_stole.jpg" alt=""></div>
     </div>
-
   </section>
 
   <style lang=scss>
     h2{
 	font-family: 'Bodoni Moda SC', serif;
-      
+    }
+
+    img{
+      max-width: 100%;
     }
   </style>

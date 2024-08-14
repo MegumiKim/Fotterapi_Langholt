@@ -3,14 +3,15 @@ import {ComposeIcon} from '@sanity/icons'
 export default defineType({
   name: 'quote',
   type: 'object',
-  title: 'Quote',
+  title: 'Anmeldelse',
   icon: ComposeIcon,
   fields: [
     defineField({
-      name: 'quote',
+      name: 'text',
       type: 'text',
-      title: 'Quote',
-      validation: (Rule) => Rule.required().max(250).error('Quote is max 250 characters)'),
+      title: 'Tekst',
+      rows: 4,
+      validation: (Rule) => Rule.required().max(200).error('Max 200 bokstaver'),
     }),
     defineField({
       name: 'by',
@@ -20,7 +21,7 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: 'quote', // Field name for the title in the preview
+      title: 'Anmeldelse', // Field name for the title in the preview
       subtitle: 'by', // Field name for the subtitle in the preview
     },
     prepare({title, subtitle}) {

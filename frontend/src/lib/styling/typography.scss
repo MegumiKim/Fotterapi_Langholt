@@ -88,6 +88,9 @@ ol,
 	@include paragraph;
 }
 
+.details {
+	@include details;
+}
 a {
 	text-decoration: none;
 	color: inherit;

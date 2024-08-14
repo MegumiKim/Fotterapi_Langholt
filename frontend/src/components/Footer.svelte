@@ -1,7 +1,8 @@
 <footer class="container">
 
 
-  <p>Fotterapi Langholt © 2019. Org.nr. 918 425 195</p>
+  <p>Fotterapi Langholt </p>
+  <p>© 2019. Org.nr. 918 425 195</p>
     <!-- <div><img src="/asset/logo.jpg" alt="Autorisert Fotterapeut"></div> -->
 
 </footer>

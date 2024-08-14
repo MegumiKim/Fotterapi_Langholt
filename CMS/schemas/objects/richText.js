@@ -1,10 +1,10 @@
 import {TextIcon} from '@sanity/icons'
-import link from './link'
+// import link from './link'
 
 export default {
   name: 'richText',
   type: 'object',
-  title: 'Rich Text',
+  // title: 'Rich Text',
   icon: TextIcon,
   fields: [
     {
@@ -14,13 +14,16 @@ export default {
         {
           type: 'block',
           styles: [
-            {title: 'Normal', value: 'normal'},
-            {title: 'H2', value: 'h2'},
-            {title: 'H3', value: 'h3'},
-            {title: 'Quote', value: 'blockquote'},
+            //removed styles
           ],
+
           marks: {
-            annotations: [link],
+            decorators: [
+              {title: 'Strong', value: 'strong'},
+              {title: 'Emphasis', value: 'em'},
+              // {title: 'Highlight', value: 'highlight'},
+            ],
+            // annotations: [link],
           },
         },
       ],

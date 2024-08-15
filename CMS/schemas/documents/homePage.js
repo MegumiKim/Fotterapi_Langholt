@@ -5,6 +5,7 @@ export default defineType({
   name: 'homePage',
   type: 'document',
   title: 'Home',
+
   groups: [
     {
       name: 'page',
@@ -16,8 +17,8 @@ export default defineType({
       title: 'Content',
     },
     {
-      name: 'Contact',
-      title: 'Kontakt',
+      name: 'contact',
+      title: 'contact',
     },
   ],
   fields: [
@@ -52,8 +53,18 @@ export default defineType({
       type: 'array',
       group: 'content',
       title: 'Content blocks',
-      description: 'Overview/Demo/Scenario/Breakdown',
+      description: 'Contents blocks of picture, text, images etc.',
       of: getContentBlocks(),
+    }),
+
+    defineField({
+      name: 'contact',
+      type: 'array',
+      of: [
+        {
+          type: 'location',
+        },
+      ],
     }),
   ],
 

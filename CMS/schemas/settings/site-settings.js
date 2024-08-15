@@ -63,13 +63,13 @@ export default defineType({
     //
     // Header
     //
-    defineField({
-      name: 'navHeader',
-      type: 'array',
-      group: 'header',
-      title: 'Navigation',
-      of: [{type: 'navigationItem'}],
-    }),
+    // defineField({
+    //   name: 'navHeader',
+    //   type: 'array',
+    //   group: 'header',
+    //   title: 'Navigation',
+    //   of: [{type: 'navigationItem'}],
+    // }),
 
     //
     // Footer

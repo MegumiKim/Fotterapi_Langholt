@@ -1,5 +1,6 @@
 import {defineField, defineType} from 'sanity'
 import {LinkIcon} from '@sanity/icons'
+
 export default defineType({
   name: 'cta',
   type: 'object',
@@ -7,7 +8,7 @@ export default defineType({
   icon: LinkIcon,
   fields: [
     defineField({
-      name: 'title',
+      name: 'text',
       type: 'string',
     }),
     defineField({

@@ -1,4 +1,4 @@
-import {defineField, defineType} from 'sanity'
+import {defineType} from 'sanity'
 import {ComposeIcon} from '@sanity/icons'
 export default defineType({
   name: 'textWithImage',
@@ -6,21 +6,25 @@ export default defineType({
   title: 'Tekst med bildet',
   icon: ComposeIcon,
   fields: [
-    defineField({
+    {
       name: 'heading',
       type: 'string',
       title: 'Overtekst',
-    }),
-    defineField({
+    },
+    {
       name: 'text',
       type: 'richText',
-      // title: 'Tekst',
-    }),
-    defineField({
+    },
+    {
       name: 'image',
-      type: 'image',
+      type: 'imageObject',
       description: 'Et bilde som vises ved siden av teksten',
-    }),
+    },
+    {
+      title: 'Button with link',
+      name: 'cta',
+      type: 'cta',
+    },
   ],
 
   preview: {

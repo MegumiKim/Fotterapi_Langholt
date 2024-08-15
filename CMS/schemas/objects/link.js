@@ -10,9 +10,9 @@ export default {
       title: 'Internal Link',
       name: 'internalLink',
       description: 'Select pages for navigation',
-      type: 'reference',
+      // type: 'reference',
       // to: [{type: 'page'}, {type: 'project'}],
-      to: [{type: 'project'}],
+      // to: [{type: 'document'}],
       options: {
         disableNew: true,
       },

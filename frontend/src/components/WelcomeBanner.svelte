@@ -1,10 +1,21 @@
+<script>
+import Image from "../components/Image.svelte";
+
+export let heading;
+export let subheading;
+export let image;
+export let focalpoint;
+
+</script>
+
+
 <section id="welcome" class="">
   <div class="img_wrapper">
-    <img src="/asset/fotterapi_3.jpg" alt="">
+    <Image asset={image} focalPoint={focalpoint}/>
   </div>
   <div class="h1-wrapper">
-    <h1 class="title">Fotterapi Langholt</h1>
-    <p>Autorisert Fotterapeut </p>
+    <h1 class="title">{heading}</h1>
+    <p>{subheading} </p>
   </div>
 </section>
 
@@ -16,12 +27,23 @@
     max-width: 1300px;
     margin: auto;
     position: relative;  
-    img{
-      opacity: 1;
-      width: 100%;
-      filter: brightness(50%)
-    }
+ 
+    .img_wrapper{
+      position: relative; 
 
+        // Create the overlay
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black; // Color of the darkening overlay
+    opacity: 0.5; // Adjust this to control the darkness
+    /* z-index: 1; // Ensure it sits on top of the image */
+  }
+    }
 
     .h1-wrapper{
       position: absolute;

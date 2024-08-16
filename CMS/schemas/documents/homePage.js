@@ -5,7 +5,9 @@ export default defineType({
   name: 'homePage',
   type: 'document',
   title: 'Home',
-
+  options: {
+    singleton: true,
+  },
   groups: [
     {
       name: 'page',
@@ -18,7 +20,7 @@ export default defineType({
     },
     {
       name: 'contact',
-      title: 'contact',
+      title: 'Contact',
     },
   ],
   fields: [
@@ -60,6 +62,7 @@ export default defineType({
     defineField({
       name: 'contact',
       type: 'array',
+      group: 'contact',
       of: [
         {
           type: 'location',

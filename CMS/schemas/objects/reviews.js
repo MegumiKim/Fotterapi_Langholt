@@ -6,7 +6,7 @@ export default defineField({
   Title: 'Anmeldelser',
   fields: [
     defineField({
-      name: 'Anmeldelser',
+      name: 'reviews',
       type: 'array',
       of: [
         {

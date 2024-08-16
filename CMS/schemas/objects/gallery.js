@@ -22,9 +22,10 @@ export default {
           },
           fields: [
             {
-              name: 'caption',
+              name: 'alt',
               type: 'string',
-              title: 'Caption',
+              title: 'Alternative Text',
+              description: 'Text which appears if the image fail to render',
             },
           ],
         },

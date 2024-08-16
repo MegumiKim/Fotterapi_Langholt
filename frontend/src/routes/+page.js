@@ -1,13 +1,13 @@
-import { getPage } from '../lib/sanity.js';
+import { getHomePage } from '$lib/sanity.js';
 
-export async function load({ parent }) {
-	const projectData = await getPage();
+export async function load() {
+	const homePageData = await getHomePage();
 
-	if (!projectData) {
+	if (!homePageData) {
 		return { status: 404 };
 	}
 
 	return {
-		projectData
+		homePageData
 	};
 }

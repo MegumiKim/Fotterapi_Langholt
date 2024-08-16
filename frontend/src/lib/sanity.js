@@ -1,5 +1,6 @@
 import { createClient } from '@sanity/client';
 import groq from 'groq';
+import { homePageQuery } from './queries/pages';
 
 export const client = createClient({
 	projectId: 'yy4hgj2v',
@@ -12,9 +13,6 @@ export const client = createClient({
 //Page
 //
 //fetch a single page by slug
-export async function getPage() {
-	return await client.fetch(
-		groq`
-    *[_type == "project"]`
-	);
+export async function getHomePage() {
+	return await client.fetch(homePageQuery);
 }

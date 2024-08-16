@@ -18,6 +18,7 @@
     </div>
 
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7446.292911245962!2d10.02753287828931!3d59.06081531117502!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4646e9953a855e47%3A0xb89e6bdc04e74693!2sNansetgata%2068%2C%203257%20Larvik!5e0!3m2!1sno!2sno!4v1723486761449!5m2!1sno!2sno" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
   </div>
 
   <div class="flex">

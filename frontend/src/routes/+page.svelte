@@ -4,11 +4,17 @@
 	import Reviews from '../components/Reviews.svelte';
 import WelcomeBanner from '../components/WelcomeBanner.svelte';
 export let data;
-
+const homePageData = data.homePageData[0];
+console.log(homePageData);
 
 </script>
+{#if homePageData}
 
-<WelcomeBanner />
+<WelcomeBanner 
+heading={homePageData.heading}
+subheading={homePageData.subHeading}
+ image={homePageData.image} />
+{/if}
 
 <!-- <MainMenu /> -->
 

@@ -13,24 +13,23 @@ contentBlocks[]{
 
 _type == "gallery" =>{
 "type":_type,
-items[]{${asset}}
+"content":items[]{${asset}}
   },
 
 _type == "textWithImage" =>{
 "type":_type,
+"content":{
   heading, 
   text,
   cta,
 'image':image.${asset},
 "focalPoint": image.hotspot,
-richText,
+richText}
 },
 
 _type == "reviews" =>{
   "type" : _type,
-  reviews[]{
-    text, by
-  }    
+"content":reviews[]{by, text}
 }
 
 },

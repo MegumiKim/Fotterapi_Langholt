@@ -1,5 +1,16 @@
 @use 'sass:math';
-@use '$lib/styling/breakpoints';
+@use '$lib/styling/breakpoints' with (
+	$classes: (
+		small medium large xlarge xxlarge
+	),
+	$breakpoints: (
+		small: 0px,
+		medium: 768px,
+		large: 1024px,
+		xlarge: 1300px,
+		xxlarge: 1720px
+	)
+);
 @use '$lib/styling/typography';
 @use '$lib/styling/colors';
 
@@ -72,6 +83,36 @@ $gutters: (
 		margin-right: var(--bleed-negative);
 	}
 }
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat($columns, minmax(0, 1fr));
+	gap: var(--gutter);
+	padding-bottom: 0.5em;
+	// align-items: baseline;
+
+	> .cell {
+		grid-column: span #{$columns} / span #{$columns};
+	}
+
+	// Auto width
+	@include breakpoints.eachBreakpoint() using ($size) {
+		@for $i from 1 through $columns {
+			> .#{$size}-span-#{$i} {
+				grid-column: span #{$i} / span #{$i};
+			}
+		}
+		@for $i from 1 through $columns {
+			> .#{$size}-start-#{$i} {
+				grid-column-start: #{$i};
+			}
+			> .#{$size}-end-#{$i} {
+				grid-column-end: #{$i};
+			}
+		}
+	}
+}
+
 section {
 	max-width: 100%;
 	padding-bottom: 4em;
@@ -112,11 +153,59 @@ button:active {
 		// align-items: center;
 	}
 
-	img,
-	p,
 	div {
 		flex: 1;
-		max-width: min(350px, 100%);
-		margin: auto;
+		// max-width: min(350px, 100%);
+		// margin: auto;
 	}
 }
+
+@mixin horizontalScroll() {
+	--columns: 1;
+	display: grid;
+	grid-auto-flow: column;
+	align-items: baseline;
+	grid-auto-columns: calc(
+		(100vw - (var(--gutter) * (var(--columns) - 1)) - (var(--bleed) * 2)) / var(--columns)
+	);
+
+	column-gap: var(--gutter);
+	padding-left: var(--bleed);
+	padding-right: var(--bleed);
+
+	&.grid {
+		// Reset GRID
+		grid-template-columns: unset !important;
+		> * {
+			grid-column: unset !important;
+		}
+
+		.cell {
+			height: 100%;
+		}
+	}
+
+	// @include breakpoints.mq($from: medium) {
+	// 	--columns: 2;
+	// }
+
+	// @include breakpoints.mq($from: large) {
+	// 	--columns: 3;
+	// }
+}
+
+.horizontal-scroll {
+	@include horizontalScroll;
+}
+
+// .horizontal-scroll-until-medium {
+// 	@include breakpoints.mq($until: medium) {
+// 		@include horizontalScroll();
+// 	}
+// }
+
+// .horizontal-scroll-until-large {
+// 	@include breakpoints.mq($until: large) {
+// 		@include horizontalScroll();
+// 	}
+// }

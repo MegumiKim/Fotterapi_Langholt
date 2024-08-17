@@ -6,7 +6,9 @@ $breakpoints: (
 	large: 1024px,
 	xlarge: 1200px,
 	xxlarge: 1440px
-);
+) !default;
+
+$classes: (small medium large) !default;
 
 //media query mixin
 @mixin mq($size) {
@@ -16,5 +18,13 @@ $breakpoints: (
 		}
 	} @else {
 		@warn "Breakpoint #{$size} not found in \$breakpoints map.";
+	}
+}
+
+@mixin eachBreakpoint {
+	@each $size in $classes {
+		@include mq($size) {
+			@content ($size);
+		}
 	}
 }

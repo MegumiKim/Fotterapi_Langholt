@@ -1,20 +1,18 @@
 <script>
-
-const reviews = [
-  {comment: "Fantastisk fotterapi! Føttene mine har aldri føltes bedre.", by: "Kari"},
-  {comment: "Profesjonell og vennlig service. Anbefales på det sterkeste!", by: "Anders"},
-  {comment: "Utrolig fornøyd med behandlingen. Kommer definitivt tilbake!", by: "Linda"}
-]
+ export let content;
+ 
 </script>
 
 
-<section class="container">
-<div class="flex">
-  {#each reviews as review}
-    <blockquote class="review-card">
-  <p class="comment">{review.comment}</p>
-  <p class="by-line"> - {review.by}</p>
-      </blockquote>
+<section>
+<div class="grid">
+  {#each content as review}
+    <div class="cell medium-span-6">
+      <blockquote class="review-card">
+        <p class="comment">{review.text}</p>
+        <p class="by-line"> - {review.by}</p>
+        </blockquote>
+    </div>
   {/each}
 </div>
 </section>

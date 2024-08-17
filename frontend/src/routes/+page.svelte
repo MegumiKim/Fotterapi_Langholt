@@ -1,11 +1,11 @@
 <script>
-	import Locations from '../components/Locations.svelte';
-	import Marketing from '../components/Marketing.svelte';
-	import Reviews from '../components/Reviews.svelte';
-import WelcomeBanner from '../components/WelcomeBanner.svelte';
-export let data;
-const homePageData = data.homePageData[0];
-console.log(homePageData);
+	import ContentBlocks from '../components/ContentBlocks.svelte';
+import Locations from '../components/Locations.svelte';
+  import WelcomeBanner from '../components/WelcomeBanner.svelte';
+
+  export let data;
+  const homePageData = data.homePageData[0];
+  console.log(data);
 
 </script>
 {#if homePageData}
@@ -16,9 +16,9 @@ subheading={homePageData.subHeading}
  image={homePageData.image} />
 {/if}
 
-<!-- <MainMenu /> -->
+<ContentBlocks blocks={homePageData.contentBlocks}/>
 
-<section id="om" class="container">
+<!-- <section id="om" class="container">
   <div class="inner-wrapper-om">
     <h2>Autorisert Fotterapeut</h2>
     <div class="autorisert-wrapper">
@@ -28,20 +28,18 @@ subheading={homePageData.subHeading}
     <p> Med spesialisert utdanning og sertifisering hjelper jeg med alt fra inngrodde negler og hard hud til forebyggende fotpleie. Jeg bruker kun høykvalitetsprodukter og følger strenge hygienestandarder.  </p>
     <a href="#" class="btn">Bestill Time</a>
   </div>
-</section>
+</section> -->
 
 
-<section class="flex container">
+<!-- <section class="flex container">
   <div>
     <p>Jeg tilbyr behandlinger både på min klinikk i Larvik sentrum på mandager og torsdager, samt på Stavern Sykehjem på onsdager. På fredager tilbyr jeg hjemmebesøk for de som trenger det. Klinikken holder stengt i helgene.</p>
 
 
   </div>
 <div><img src="asset/logo.jpg" alt=""></div>
-</section>
+</section> -->
 
-<Reviews />
-<Marketing />
 <Locations />
 
 

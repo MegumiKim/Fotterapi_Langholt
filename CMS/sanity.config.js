@@ -16,19 +16,26 @@ export default defineConfig({
       structure: (S) =>
         S.list()
           .title('Pages')
-          .items([
-            // Our singleton type has a list item with a custom child
-            S.listItem().title('Home').id('homePage').child(
-              // Instead of rendering a list of documents, we render a single
-              // document, specifying the `documentId` manually to ensure
-              // that we're editing the single instance of the document
-              S.document().title('Home').schemaType('homePage').documentId('homePage'),
-            ),
-            S.listItem().title('Site Settings').child(S.document().schemaType('site-settings')),
 
-            // Regular document types
-            // S.documentTypeListItem('blogPost').title('Blog Posts'),
-            // S.documentTypeListItem('author').title('Authors'),
+          .items([
+            S.listItem()
+              .title('Home')
+              .child(S.document().title('Home').schemaType('homePage').documentId('homePage')),
+
+            S.listItem()
+              .title('About')
+              .child(S.document().title('About').schemaType('aboutPage').documentId('aboutPage')),
+
+            S.listItem()
+              .title('Behandlinger')
+              .child(
+                S.document()
+                  .title('Behandlinger')
+                  .schemaType('treatmentsPage')
+                  .documentId('treatmentsPage'),
+              ),
+
+            S.documentTypeListItem('site-settings').title('Site Settings'),
           ]),
     }),
     visionTool(),
@@ -37,4 +44,18 @@ export default defineConfig({
   schema: {
     types: schemaTypes,
   },
+
+  document: {
+    newDocumentOptions: (prev, {currentUser, creationContext}) => {
+      if (creationContext.type === 'structure') {
+        return []
+      }
+      return prev
+    },
+  },
 })
+
+//     // Regular document types
+//     // S.documentTypeListItem('blogPost').title('Blog Posts'),
+//     // S.documentTypeListItem('author').title('Authors'),
+//   ]),

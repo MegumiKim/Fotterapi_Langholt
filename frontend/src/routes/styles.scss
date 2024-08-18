@@ -77,7 +77,7 @@ $gutters: (
 	max-width: 1200px;
 	padding-left: var(--bleed);
 	padding-right: var(--bleed);
-	border-bottom: rgb(228, 228, 228) solid 1px;
+
 	&--negative {
 		margin-left: var(--bleed-negative);
 		margin-right: var(--bleed-negative);
@@ -88,7 +88,7 @@ $gutters: (
 	display: grid;
 	grid-template-columns: repeat($columns, minmax(0, 1fr));
 	gap: var(--gutter);
-	padding-bottom: 0.5em;
+	// padding-bottom: 0.5em;
 	// align-items: baseline;
 
 	> .cell {
@@ -117,6 +117,12 @@ section {
 	max-width: 100%;
 	padding-bottom: 4em;
 	padding-top: 4em;
+	border-bottom: rgb(228, 228, 228) solid 1px;
+
+	@include breakpoints.mq(medium) {
+		padding-bottom: 8em;
+		padding-top: 8em;
+	}
 }
 //buttons
 
@@ -147,7 +153,7 @@ button:active {
 	display: flex;
 	flex-direction: column;
 	gap: 3em;
-	@include breakpoints.mq(large) {
+	@include breakpoints.mq(medium) {
 		flex-direction: row;
 		justify-content: center;
 		// align-items: center;

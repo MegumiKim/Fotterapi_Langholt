@@ -3,7 +3,7 @@ import {ComposeIcon} from '@sanity/icons'
 export default defineType({
   name: 'textWithImage',
   type: 'object',
-  title: 'Tekst med bildet',
+  title: 'Tekst med bilde',
   icon: ComposeIcon,
   fields: [
     {
@@ -30,7 +30,7 @@ export default defineType({
   preview: {
     select: {
       media: 'image',
-      text: 'text',
+      title: 'heading',
     },
     prepare({title, media}) {
       return {

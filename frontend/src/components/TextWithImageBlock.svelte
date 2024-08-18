@@ -1,10 +1,12 @@
 <script>
 	import Image from "./Image.svelte";
-
+  import {PortableText} from '@portabletext/svelte'
 
  export let content;
  console.log(content);
  
+ const components = {};
+
 </script>
 
 <section class="flex">
@@ -13,7 +15,7 @@
     <h2>{content.heading}</h2>
     {/if}
     {#if content.richText}
-    <p>Rich Text</p>
+    <PortableText value={content.richText} {components} />
     {/if}
     {#if content.cta}
     <div class="btn-wrapper"><a href={content.cta.link} class="btn">{content.cta.text}</a></div>
@@ -38,11 +40,15 @@
   }
 } */
 .text-wrapper{
-text-align: center;
+margin: auto;
+
+  h2{
+    text-align: center;
+  }
 }
 
 .img-wrapper{
-
+margin: auto;
 }
 
 .btn-wrapper{
@@ -50,6 +56,12 @@ text-align: center;
 
   .btn{
     margin: auto;
+    text-align: center;
   }
+
+
+
 }
+
+
 </style>

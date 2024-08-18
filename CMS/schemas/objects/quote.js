@@ -21,7 +21,7 @@ export default defineType({
   ],
   preview: {
     select: {
-      title: 'Anmeldelse', // Field name for the title in the preview
+      title: 'text', // Field name for the title in the preview
       subtitle: 'by', // Field name for the subtitle in the preview
     },
     prepare({title, subtitle}) {

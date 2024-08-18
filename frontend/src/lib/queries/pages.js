@@ -20,11 +20,10 @@ _type == "textWithImage" =>{
 "type":_type,
 "content":{
   heading, 
-  text,
+  "richText":text.text,
   cta,
 'image':image.${asset},
-"focalPoint": image.hotspot,
-richText}
+"focalPoint": image.hotspot}
 },
 
 _type == "reviews" =>{

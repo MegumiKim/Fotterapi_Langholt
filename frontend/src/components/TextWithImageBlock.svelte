@@ -15,7 +15,9 @@
     <h2>{content.heading}</h2>
     {/if}
     {#if content.richText}
-    <PortableText value={content.richText} {components} />
+    <div class="rich-text-wrapper">
+      <PortableText value={content.richText} {components} />
+    </div>
     {/if}
     {#if content.cta}
     <div class="btn-wrapper"><a href={content.cta.link} class="btn">{content.cta.text}</a></div>
@@ -30,20 +32,27 @@
 </section>
 
 <style lang="scss">
+@use '$lib/styling/breakpoints';
 
+.flex {
 
-/* section{
-  display: flex;
-
-  div{
-    flex:1
-  }
-} */
+  @include breakpoints.breakpoint(large) {
+    gap: 8em;
+	}
+}
 .text-wrapper{
 margin: auto;
 
+
+
   h2{
     text-align: center;
+  }
+
+  .rich-text-wrapper{
+    @include breakpoints.breakpoint(medium) {
+    margin: 4em auto;
+	}
   }
 }
 

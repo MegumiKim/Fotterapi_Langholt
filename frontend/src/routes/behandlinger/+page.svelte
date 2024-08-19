@@ -9,14 +9,17 @@ console.log(pageData);
 
 </script>
 
+<div class="top-banner">
 
-<section class="container">
-  <h1>{pageData.heading}</h1>
-  <p>{pageData.subHeading}</p>
-  <div>
-    <Image asset={pageData.image} focalPoint={pageData.focalPoint}/>
+  <div class="img-overlay">
+    <!-- <Image asset={pageData.image} focalPoint={pageData.focalPoint}/> -->
+     <img src={pageData.image.url} alt="">
   </div>
-</section>
+  <div class="h1-wrapper">
+    <h1>{pageData.heading}</h1>
+    <p>{pageData.subHeading}</p>
+  </div>
+</div>
 
 
 <section class="container behandlinger">
@@ -26,12 +29,12 @@ console.log(pageData);
   <div class="flex">
     <div>
       <h2>{treatment.title}</h2>
-      {#if treatment.price.price }<p class="price">NOK: {treatment.price.price}</p> {/if}
-    {#if treatment.price.text }<p>{treatment.price.text}</p>{/if}
+      {#if treatment.price.price }<p class="price">NOK {treatment.price.price}</p> {/if}
+    {#if treatment.price.text }<p class="details">{treatment.price.text}</p>{/if}
     </div>
-    <div>
-      <p>{treatment.description}</p>
-    </div>
+    <div><p>{treatment.description}</p></div>
+
+
   </div>
   {/each}
 </section>
@@ -41,15 +44,28 @@ console.log(pageData);
 
 <style lang="scss">
 
+.top-banner {
+  position: relative;
+}
+
+.img-overlay{
+  img{
+    max-height: 40vh;
+    object-fit: cover;
+  }
+}
+
+
 .behandlinger{
   display: flex;
   flex-direction: column;
   gap: 2em;
 }
   .flex{
-    div{
-     margin: 0;
+    p{
+      margin-top: 0;
     }
+
   }
 
   .price {
@@ -57,6 +73,7 @@ console.log(pageData);
     &:before{
       content: "| ";
     }
+    margin-bottom: 0;
   }
 
   h2{

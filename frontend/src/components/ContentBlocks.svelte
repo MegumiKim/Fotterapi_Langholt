@@ -31,7 +31,7 @@ import Gallery from "./Gallery.svelte";
       </div>
     {/if}
     {#if type === 'gallery'}
-      <div class="cell">
+      <div class="cell container--negative">
         <svelte:component this={blockTypes[type]} {...content} />
       </div>
     {/if}

@@ -1,5 +1,5 @@
 import {defineType, defineField} from 'sanity'
-// import {getContentBlocks} from '../utils/contentBlocks.js'
+import {getContentBlocks} from '../utils/contentBlocks.js'
 
 export default defineType({
   name: 'treatmentsPage',
@@ -15,12 +15,12 @@ export default defineType({
       default: true,
     },
     {
-      name: 'content',
-      title: 'Content',
+      name: 'treatments',
+      title: 'List of Treatments',
     },
     {
-      name: 'contact',
-      title: 'Contact',
+      name: 'content',
+      title: 'Content',
     },
   ],
   fields: [
@@ -29,7 +29,7 @@ export default defineType({
       type: 'string',
       group: 'page',
       title: 'Overskrift',
-      description: 'Overskrift på hjemmesiden.',
+      description: 'Overskrift på behandlingerside.',
       validation: (Rule) => [Rule.required().max(50).error('Obligatorisk. Maks 50 bokstaver.')],
     }),
     defineField({
@@ -45,8 +45,30 @@ export default defineType({
       type: 'imageObject',
       group: 'page',
       // fieldset: 'thumbnail',
-      description: 'Hoved bilde på hjemmesiden.',
-      validation: (Rule) => [Rule.required().error('A image required')],
+      description: 'Hoved bilde på siden.',
+      validation: (Rule) => [Rule.required().error('An image required')],
+    }),
+
+    defineField({
+      name: 'treatments',
+      type: 'array',
+      group: 'treatments',
+      title: 'List of treatments',
+      of: [
+        {
+          type: 'treatment',
+        },
+      ],
+    }),
+
+    // Common content blocks
+    defineField({
+      name: 'contentBlocks',
+      type: 'array',
+      group: 'content',
+      title: 'Content blocks',
+      description: 'Contents blocks of picture, text, images etc.',
+      of: getContentBlocks(),
     }),
   ],
 })

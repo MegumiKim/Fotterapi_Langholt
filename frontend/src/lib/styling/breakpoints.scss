@@ -8,6 +8,7 @@ $breakpoints: (
 	xxlarge: 1440px
 ) !default;
 
+$zero: small !default;
 $classes: (small medium large) !default;
 
 //media query mixin
@@ -25,6 +26,16 @@ $classes: (small medium large) !default;
 	@each $size in $classes {
 		@include mq($size) {
 			@content ($size);
+		}
+	}
+}
+
+@mixin breakpoint($size) {
+	@if ($size == $zero) {
+		@content;
+	} @else {
+		@include mq($size) {
+			@content;
 		}
 	}
 }

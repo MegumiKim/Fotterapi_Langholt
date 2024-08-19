@@ -12,6 +12,7 @@ import objCta from '../schemas/objects/cta.js'
 import objTextWithImage from '../schemas/objects/textWithImage.js'
 import objReviews from '../schemas/objects/reviews.js'
 import objLocation from '../schemas/objects/location.js'
+import objTreatment from '../schemas/objects/treatment.js'
 
 export const schemaTypes = [
   // Documents//
@@ -30,6 +31,7 @@ export const schemaTypes = [
   objTextWithImage,
   objReviews,
   objLocation,
+  objTreatment,
   //
   // Settings
   //

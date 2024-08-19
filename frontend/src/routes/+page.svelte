@@ -5,7 +5,7 @@ import Locations from '../components/Locations.svelte';
 
   export let data;
   const homePageData = data.homePageData[0];
-  console.log(data);
+  // console.log(data);
 
 </script>
 {#if homePageData}

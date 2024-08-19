@@ -58,13 +58,13 @@ $gutters: (
 
 :root {
 	@each $breakpoint, $gutter in $gutters {
-		@include breakpoints.mq($breakpoint) {
+		@include breakpoints.breakpoint($breakpoint) {
 			--gutter: #{$gutter};
 		}
 	}
 
 	@each $breakpoint, $b in $bleed {
-		@include breakpoints.mq($breakpoint) {
+		@include breakpoints.breakpoint($breakpoint) {
 			--bleed: #{$b};
 			--bleed-negative: #{-$b};
 		}
@@ -119,7 +119,7 @@ section {
 	padding-top: 4em;
 	border-bottom: rgb(228, 228, 228) solid 1px;
 
-	@include breakpoints.mq(medium) {
+	@include breakpoints.breakpoint(medium) {
 		padding-bottom: 8em;
 		padding-top: 8em;
 	}
@@ -153,10 +153,9 @@ button:active {
 	display: flex;
 	flex-direction: column;
 	gap: 3em;
-	@include breakpoints.mq(medium) {
+	@include breakpoints.breakpoint(medium) {
 		flex-direction: row;
 		justify-content: center;
-		// align-items: center;
 	}
 
 	div {
@@ -175,7 +174,7 @@ button:active {
 		(100vw - (var(--gutter) * (var(--columns) - 1)) - (var(--bleed) * 2)) / var(--columns)
 	);
 
-	column-gap: var(--gutter);
+	gap: var(--gutter);
 	padding-left: var(--bleed);
 	padding-right: var(--bleed);
 
@@ -191,13 +190,19 @@ button:active {
 		}
 	}
 
-	// @include breakpoints.mq($from: medium) {
-	// 	--columns: 2;
-	// }
+	@include breakpoints.breakpoint(medium) {
+		--columns: 2;
 
-	// @include breakpoints.mq($from: large) {
-	// 	--columns: 3;
-	// }
+		grid-auto-flow: unset; // Stop auto-flowing in a horizontal direction
+		grid-template-columns: repeat(var(--columns), 1fr); // Define explicit grid columns
+		grid-auto-columns: unset; // Remove the auto-columns
+		overflow-x: unset; // Disable horizontal scrolling
+		align-items: center;
+	}
+
+	@include breakpoints.breakpoint(large) {
+		--columns: 4;
+	}
 }
 
 .horizontal-scroll {
@@ -205,13 +210,13 @@ button:active {
 }
 
 // .horizontal-scroll-until-medium {
-// 	@include breakpoints.mq($until: medium) {
+// 	@include breakpoints.mq(medium) {
 // 		@include horizontalScroll();
 // 	}
 // }
 
 // .horizontal-scroll-until-large {
-// 	@include breakpoints.mq($until: large) {
+// 	@include breakpoints.mq(large) {
 // 		@include horizontalScroll();
 // 	}
 // }

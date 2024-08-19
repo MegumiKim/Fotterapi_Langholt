@@ -1,6 +1,6 @@
 import { createClient } from '@sanity/client';
-import groq from 'groq';
-import { homePageQuery } from './queries/pages';
+import { homePageQuery } from './queries/homePage.js';
+import { treatmentPageQuery } from './queries/treatmentPage.js';
 
 export const client = createClient({
 	projectId: 'yy4hgj2v',
@@ -12,7 +12,9 @@ export const client = createClient({
 //
 //Page
 //
-//fetch a single page by slug
 export async function getHomePage() {
 	return await client.fetch(homePageQuery);
+}
+export async function getTreatmentPage() {
+	return await client.fetch(treatmentPageQuery);
 }

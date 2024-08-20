@@ -1,7 +1,7 @@
 <script>
-  import './styles.scss'
-  import Header from '../components/Header.svelte';
-  import Footer from '../components/Footer.svelte';
+	import './styles.scss';
+	import Header from '../components/Header.svelte';
+	import Footer from '../components/Footer.svelte';
 
 	let isScrollingDown = false;
 	let lastScrollY = 0;
@@ -19,6 +19,6 @@
 <svelte:window on:scroll={onScroll} />
 <Header />
 <main>
-  <slot />
+	<slot />
 </main>
 <Footer />

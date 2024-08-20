@@ -7,18 +7,20 @@
 	});
 
 	console.log(headerVisible);
-	
 </script>
 
-
-<header class:visible={headerVisible} >
+<header class:visible={headerVisible}>
 	<!-- <a href="/" class="logo"><img src="/asset/logo.jpg" alt=""></a> -->
-		<nav>
-			<a href="/" >Home</a>
-			<a href="/om" >Om</a>
-			<a href="/behandlinger">Behandlinger</a>
-			<a target="_blank" href="https://helse.aspit.no/landing?clinicId=26d5e3e0-768c-4e24-9af8-7b34f181db8a&fbclid=IwY2xjawEnOGhleHRuA2FlbQIxMAABHYYMx6WWrAOXCYVEoNRczEKFTLNQLMU93TIhevFGtQ_WW2MzS0Vn2iTuYg_aem_9qtup80mJ93Uavt4Cbs1fQ">Bestill Time</a>
-		</nav>
+	<nav>
+		<a href="/">Home</a>
+		<a href="/om">Om</a>
+		<a href="/behandlinger">Behandlinger</a>
+		<a
+			target="_blank"
+			href="https://helse.aspit.no/landing?clinicId=26d5e3e0-768c-4e24-9af8-7b34f181db8a&fbclid=IwY2xjawEnOGhleHRuA2FlbQIxMAABHYYMx6WWrAOXCYVEoNRczEKFTLNQLMU93TIhevFGtQ_WW2MzS0Vn2iTuYg_aem_9qtup80mJ93Uavt4Cbs1fQ"
+			>Bestill Time</a
+		>
+	</nav>
 </header>
 
 <style lang="scss">

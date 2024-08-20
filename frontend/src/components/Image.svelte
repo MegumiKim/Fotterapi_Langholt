@@ -33,6 +33,7 @@
 		)
 	);
 </script>
+
 <!-- svelte-ignore a11y-missing-attribute -->
 <img
 	src={images.src()}

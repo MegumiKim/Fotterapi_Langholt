@@ -1,6 +1,6 @@
 <script>
 	import ContentBlocks from '../components/ContentBlocks.svelte';
-import Locations from '../components/Locations.svelte';
+  import Locations from '../components/Locations.svelte';
   import WelcomeBanner from '../components/WelcomeBanner.svelte';
 
   export let data;
@@ -13,15 +13,10 @@ import Locations from '../components/Locations.svelte';
 <WelcomeBanner 
 heading={homePageData.heading}
 subheading={homePageData.subHeading}
- image={homePageData.image} />
+image={homePageData.image} 
+focalpoint={homePageData.focalpoint}
+/>
 {/if}
 
 <ContentBlocks blocks={homePageData.contentBlocks}/>
-
 <Locations />
-
-
-
-<style lang="scss">
-
-</style>

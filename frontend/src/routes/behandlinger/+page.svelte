@@ -1,7 +1,8 @@
 <script>
+	import Banner from "../../components/Banner.svelte";
 import ContentBlocks from "../../components/ContentBlocks.svelte";
 import Image from "../../components/Image.svelte";
-
+	import WelcomeBanner from "../../components/WelcomeBanner.svelte";
 
 export let data;
 const pageData = data.pageData[0];
@@ -9,18 +10,7 @@ console.log(pageData);
 
 </script>
 
-<div class="top-banner">
-
-  <div class="img-overlay">
-    <!-- <Image asset={pageData.image} focalPoint={pageData.focalPoint}/> -->
-     <img src={pageData.image.url} alt="">
-  </div>
-  <div class="h1-wrapper">
-    <h1>{pageData.heading}</h1>
-    <p>{pageData.subHeading}</p>
-  </div>
-</div>
-
+<Banner image={pageData.image} heading={pageData.heading} subHeading={pageData.subHeading}/>
 
 <section class="container behandlinger">
   {#each pageData.treatments as treatment}
@@ -43,17 +33,7 @@ console.log(pageData);
 
 
 <style lang="scss">
-
-.top-banner {
-  position: relative;
-}
-
-.img-overlay{
-  img{
-    max-height: 40vh;
-    object-fit: cover;
-  }
-}
+@use '$lib/styling/breakpoints';
 
 
 .behandlinger{
@@ -61,6 +41,7 @@ console.log(pageData);
   flex-direction: column;
   gap: 2em;
 }
+
   .flex{
     p{
       margin-top: 0;
@@ -82,9 +63,5 @@ console.log(pageData);
     margin: 0em auto;
   }
 
-  img{
-    aspect-ratio: 1;
-    width: 100%;
-object-fit: cover;
-  }
+ 
 </style>

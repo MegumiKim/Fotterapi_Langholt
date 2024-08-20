@@ -3,11 +3,8 @@
   import Header from '../components/Header.svelte';
   import Footer from '../components/Footer.svelte';
 
-
-
 	let isScrollingDown = false;
 	let lastScrollY = 0;
-
 
 	function onScroll(event) {
 		const currentY = Math.max(window.pageYOffset || document.documentElement.scrollTop, 0);

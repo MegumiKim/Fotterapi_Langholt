@@ -1,33 +1,40 @@
 <script>
-import Image from "../components/Image.svelte";
 
-export let heading;
-export let subheading;
 export let image;
-export let focalpoint;
-export let height;
+export let heading;
+export let subHeading;
+
 
 </script>
 
-  <div class="banner" style={`height:${height}vh`}>
-    <div class="img-overlay">
-      <Image asset={image} focalPoint={focalpoint}/>
-    </div>
-    <div class="h1-wrapper">
-      <h1 class="title">{heading}</h1>
-      <p>{subheading} </p>
-    </div>
+<div class="banner" >
+  <div class="img-overlay">
+    <!-- <Image asset={pageData.image} focalPoint={pageData.focalpoint}/> -->
+     <img src={image.url} alt="">
   </div>
+  <div class="h1-wrapper">
+    <h1 class="title">{heading}</h1>
+    <p>{subHeading} </p>
+  </div>
+</div>
 
+<style lang="scss">
+ img{
+    width: 100%;
+    height: 100%;
+object-fit: cover;
+  }
 
-<style lang='scss'>
+  //Banner
 
   .banner {
     position: relative;
+    height: 30vh;
+
   }
   //Image overlay
 .img-overlay {
-
+height: 100%;
 	// Create the overlay
 	&::before {
 		content: '';
@@ -44,7 +51,8 @@ export let height;
 .h1-wrapper {
 	position: absolute;
 	top: 0;
-	text-align: center;
+	text-align: left;
+  padding-left:  var(--bleed);
 	display: flex;
 	flex-direction: column;
 	width: 100%;

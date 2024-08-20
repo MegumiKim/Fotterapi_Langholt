@@ -5,8 +5,6 @@
 
 	export let blocks = [];
 
-	// console.log(blocks);
-
 	const blockTypes = {
 		textWithImage: TextWithImageBlock,
 		reviews: Reviews,

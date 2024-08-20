@@ -3,7 +3,7 @@
 	import { PortableText } from '@portabletext/svelte';
 
 	export let content;
-	console.log(content);
+	// console.log(content);
 
 	const components = {};
 </script>

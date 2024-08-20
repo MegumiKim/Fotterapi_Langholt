@@ -37,7 +37,7 @@ export default defineType({
       type: 'string',
       group: 'page',
       title: 'Underoverskrift',
-      description: 'Skrift under overskrift.',
+      description: 'Text under overskrift.',
       validation: (Rule) => [Rule.max(50).error('Maks 50 bokstaver')],
     }),
     defineField({
@@ -45,7 +45,7 @@ export default defineType({
       type: 'imageObject',
       group: 'page',
       // fieldset: 'thumbnail',
-      description: 'Hoved bilde på siden.',
+      description: 'Background image behind the page title',
       validation: (Rule) => [Rule.required().error('An image required')],
     }),
 

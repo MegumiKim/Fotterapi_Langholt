@@ -21,3 +21,28 @@ asset->{
 `;
 
 // 'image':image.asset->url
+export const contentBlocks = groq`
+contentBlocks[]{
+
+_type == "gallery" =>{
+"type":_type,
+"content":items[]{${asset}}
+  },
+
+_type == "textWithImage" =>{
+"type":_type,
+"content":{
+  heading, 
+  "richText":text.text,
+  cta,
+'image':image.${asset},
+"focalPoint": image.hotspot}
+},
+
+_type == "reviews" =>{
+  "type" : _type,
+"content":reviews[]{by, text}
+}
+
+},
+`;

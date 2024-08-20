@@ -1,5 +1,5 @@
 import {defineType, defineField} from 'sanity'
-// import {getContentBlocks} from '../utils/contentBlocks.js'
+import {getContentBlocks} from '../utils/contentBlocks.js'
 
 export default defineType({
   name: 'aboutPage',
@@ -29,7 +29,6 @@ export default defineType({
       type: 'string',
       group: 'page',
       title: 'Overskrift',
-      description: 'Overskrift på hjemmesiden.',
       validation: (Rule) => [Rule.required().max(50).error('Obligatorisk. Maks 50 bokstaver.')],
     }),
     defineField({
@@ -37,7 +36,7 @@ export default defineType({
       type: 'string',
       group: 'page',
       title: 'Underoverskrift',
-      description: 'Skrift under overskrift.',
+      description: 'Text under overskrift.',
       validation: (Rule) => [Rule.max(50).error('Maks 50 bokstaver')],
     }),
     defineField({
@@ -47,6 +46,16 @@ export default defineType({
       // fieldset: 'thumbnail',
       description: 'Hoved bilde på hjemmesiden.',
       validation: (Rule) => [Rule.required().error('A image required')],
+    }),
+
+    // Common content blocks
+    defineField({
+      name: 'contentBlocks',
+      type: 'array',
+      group: 'content',
+      title: 'Content blocks',
+      description: 'Contents blocks of picture, text, images etc.',
+      of: getContentBlocks(),
     }),
   ],
 })

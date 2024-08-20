@@ -11,7 +11,7 @@
 	</div>
 	<div class="h1-wrapper">
 		<h1 class="title">{heading}</h1>
-		<p>{subHeading}</p>
+		{#if subHeading}<p>{subHeading}</p>{/if}
 	</div>
 </div>
 
@@ -54,7 +54,6 @@
 		width: 100%;
 		height: 100%;
 		justify-content: center;
-		gap: 2em;
 
 		h1,
 		p {

@@ -29,8 +29,10 @@
 	// Nav bar
 	header {
 		z-index: 1000;
-		position: sticky;
-		background: #fff;
+		/* position: sticky;
+		background: #fff; */
+		position: fixed;
+		color: white;
 		top: 0;
 		padding-top: 2em;
 		padding-bottom: 2em;
@@ -63,5 +65,12 @@
 	/* On Scroll animation */
 	:global(.is-scrolling-down) header {
 		transform: translateY(-100%);
+	}
+	:global(.is-scrolling-up) header {
+	background: white;
+	color: #000;
+	}
+	:global(.at-top) header {
+	background: none;
 	}
 </style>

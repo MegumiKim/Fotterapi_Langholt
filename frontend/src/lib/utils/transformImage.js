@@ -31,6 +31,7 @@ class TransformModel {
 		});
 
 		this.transformed = images;
+		console.log(this.transformed);
 	}
 
 	buildTransform(url, transform) {
@@ -54,11 +55,12 @@ class TransformModel {
 
 		this.transformed.forEach((image) => {
 			const width = image.w || null;
-
 			if (width && !widths[width]) {
 				widths[width] = `${image.url} ${width}w`;
 			}
 		});
+
+		console.log(widths);
 
 		return Object.values(widths).join(', ');
 	}

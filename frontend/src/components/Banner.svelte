@@ -1,36 +1,58 @@
 <script>
+	import Image from "./Image.svelte";
+
 	export let image;
 	export let heading;
 	export let subHeading;
+	export let isHomePage = false;
+	export let focalpoint;
+
+	// console.log(image);
+	
 </script>
 
-<div class="banner">
-	<div class="img-overlay">
-		<!-- <Image asset={pageData.image} focalPoint={pageData.focalpoint}/> -->
-		<img src={image.url} alt="" />
+<div 
+	class="banner"
+	class:is-homePage={isHomePage}
+	>
+	<div class="img-overlay"
+	class:is-homePage={isHomePage}
+	>
+		<Image asset={image} focalPoint={null}/>
 	</div>
-	<div class="h1-wrapper">
+	<div class="h1-wrapper"
+	class:is-homePage={isHomePage}>
 		<h1 class="title">{heading}</h1>
 		{#if subHeading}<p>{subHeading}</p>{/if}
 	</div>
 </div>
 
 <style lang="scss">
-	img {
-		width: 100%;
-		height: 100%;
-		object-fit: cover;
-	}
+
+@use '$lib/styling/breakpoints';
+
 
 	//Banner
 
 	.banner {
 		position: relative;
-		height: 30vh;
+		height: 40vh;
+
+	
+		overflow-y: hidden;
+
+		&.is-homePage {
+			height: 100%;
+		}
+
+		@include breakpoints.breakpoint(large) {
+	height: 40vh;
+
+}
 	}
+
 	//Image overlay
 	.img-overlay {
-		height: 100%;
 		// Create the overlay
 		&::before {
 			content: '';
@@ -41,7 +63,17 @@
 			height: 100%;
 			background-color: black; // Color of the darkening overlay
 			opacity: 0.5; // Adjust this to control the darkness
+	
 		}
+
+/* Ensures the shadow doesn't overflow */
+
+		 img {
+    display: block;
+    width: 100%;
+  /* Ensures the image scales correctly */
+}
+
 	}
 
 	.h1-wrapper {
@@ -55,10 +87,15 @@
 		height: 100%;
 		justify-content: center;
 
+		&.is-homePage {
+			text-align: center;
+		}
+
 		h1,
 		p {
 			margin: 0;
 			color: white;
 		}
+
 	}
 </style>

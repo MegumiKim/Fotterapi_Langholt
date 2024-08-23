@@ -5,13 +5,9 @@
 	export let data;
 	const pageData = data.pageData[0]
 	
+	
 </script>
 
-<Banner image={pageData.image} heading={pageData.heading} subHeading={pageData.subHeading}/>
-
-
-
-
-
+<Banner image={pageData.image} heading={pageData.heading} subHeading={pageData.subHeading} isHomePage={false}/>
 <ContentBlocks blocks={pageData.contentBlocks} />
 

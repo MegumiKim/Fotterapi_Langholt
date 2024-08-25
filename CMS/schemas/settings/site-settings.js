@@ -1,4 +1,4 @@
-import {CogIcon} from '@sanity/icons'
+import {CogIcon, LinkIcon} from '@sanity/icons'
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
@@ -41,18 +41,19 @@ export default defineType({
       group: 'site',
       title: 'Site Title',
       description: 'Title of the site which appears in the browser tab.',
-      initialValue: 'Futures Lab',
+      initialValue: 'Fotterapi Langholt',
       validation: (rule) => rule.max(20).error('Site title cannot exceed 20 characters'),
     }),
-    defineField({
-      name: 'elevatorPitch',
-      type: 'string',
-      group: 'site',
-      title: 'キャッチコピー',
-      description: 'メインページのキャッチコピー。',
-      initialValue: '綺麗な脚にしましょう',
-      validation: (rule) => rule.max(70).error('70文字以下'),
-    }),
+
+    // defineField({
+    //   name: 'elevatorPitch',
+    //   type: 'string',
+    //   group: 'site',
+    //   title: 'キャッチコピー',
+    //   description: 'メインページのキャッチコピー。',
+    //   initialValue: '綺麗な脚にしましょう',
+    //   validation: (rule) => rule.max(70).error('70文字以下'),
+    // }),
     // defineField({
     //   name: 'seo',
     //   type: 'seo',
@@ -81,12 +82,20 @@ export default defineType({
       title: 'Footer Copyright',
       description: 'Copy right text to display in the footer',
     }),
-    // defineField({
-    //   name: 'navFooter',
-    //   type: 'array',
-    //   group: 'footer',
-    //   title: 'Navigation',
-    //   of: [{type: 'navigationItem'}],
-    // }),
+    defineField({
+      name: 'orgNumber',
+      type: 'string',
+      group: 'footer',
+      title: 'Oganization number',
+      description: 'Organization number to display in the footer',
+    }),
+
+    defineField({
+      name: 'logo',
+      type: 'imageObject',
+      group: 'footer',
+      title: 'Logo',
+      description: 'main image in the footer',
+    }),
   ],
 })

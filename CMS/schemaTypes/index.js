@@ -2,8 +2,8 @@ import docHomePage from '../schemas/documents/homePage.js'
 import docAboutPage from '../schemas/documents/aboutPage.js'
 import docTreatmentsPage from '../schemas/documents/treatmentsPage.js'
 import siteSettings from '../schemas/settings/site-settings.js'
-// import objNavigationItem from '../schemas/objects/navigationItem.js'
-// import objLink from '../schemas/objects/link.js'
+import objNavigationItem from '../schemas/objects/navigationItem.js'
+import objLink from '../schemas/objects/link.js'
 import objImage from '../schemas/objects/image.js'
 import objRichText from '../schemas/objects/richText.js'
 import objGallery from '../schemas/objects/gallery.js'
@@ -21,8 +21,8 @@ export const schemaTypes = [
   docTreatmentsPage,
 
   // Objects //
-  // objNavigationItem,
-  // objLink,
+  objNavigationItem,
+  objLink,
   objImage,
   objRichText,
   objGallery,

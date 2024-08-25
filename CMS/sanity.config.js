@@ -34,8 +34,15 @@ export default defineConfig({
                   .schemaType('treatmentsPage')
                   .documentId('treatmentsPage'),
               ),
-
-            S.documentTypeListItem('site-settings').title('Site Settings'),
+            S.listItem()
+              .title('Siet Settings')
+              .child(
+                S.document()
+                  .title('Site Settings')
+                  .schemaType('site-settings')
+                  .documentId('site-settings'),
+              ),
+            // S.documentTypeListItem('site-settings').title('Site Settings'),
           ]),
     }),
     visionTool(),

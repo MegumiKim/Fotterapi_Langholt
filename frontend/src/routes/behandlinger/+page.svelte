@@ -6,23 +6,11 @@ import Image from "../../components/Image.svelte";
 
 export let data;
 const pageData = data.pageData[0];
-console.log(pageData);
 
 </script>
 
-<!-- <div class="top-banner">
 
-  <div class="img-overlay">
-     <img src={pageData.image.url} alt="">
-  </div>
-  <div class="h1-wrapper">
-    <h1>{pageData.heading}</h1>
-    <p>{pageData.subHeading}</p>
-  </div>
-</div> -->
-
-
-<Banner image={pageData.image} heading={pageData.heading} subHeading={pageData}/>
+<Banner image={pageData.image} heading={pageData.heading} subHeading={pageData.subHeading}/>
 
 <section class="container behandlinger">
   {#each pageData.treatments as treatment}

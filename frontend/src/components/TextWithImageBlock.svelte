@@ -3,7 +3,7 @@
   import {PortableText} from '@portabletext/svelte'
 
  export let content;
- console.log(content);
+//  console.log(content);
  
  const components = {};
 
@@ -16,7 +16,7 @@
     {/if}
     {#if content.richText}
     <div class="rich-text-wrapper">
-      <!-- <PortableText value={content.richText} {components} /> -->
+      <PortableText value={content.richText} {components} />
     </div>
     {/if}
     {#if content.cta}

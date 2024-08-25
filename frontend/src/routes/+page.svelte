@@ -5,7 +5,7 @@ import Banner from '../components/Banner.svelte';
 
 	export let data;
 	const pageData = data.homePageData[0];
-	// console.log(pageData);
+	console.log(pageData);
 </script>
 
 {#if pageData}

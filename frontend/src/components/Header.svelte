@@ -6,7 +6,6 @@
 		headerVisible = true;
 	});
 
-	console.log(headerVisible);
 </script>
 
 <header class:visible={headerVisible}>
@@ -29,10 +28,11 @@
 	// Nav bar
 	header {
 		z-index: 1000;
-		/* position: sticky;
-		background: #fff; */
+
 		position: fixed;
-		color: white;
+
+				position: sticky;
+		background: #fff;
 		top: 0;
 		padding-top: 2em;
 		padding-bottom: 2em;

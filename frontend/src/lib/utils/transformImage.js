@@ -31,7 +31,7 @@ class TransformModel {
 		});
 
 		this.transformed = images;
-		console.log(this.transformed);
+		// console.log(this.transformed);
 	}
 
 	buildTransform(url, transform) {
@@ -60,7 +60,7 @@ class TransformModel {
 			}
 		});
 
-		console.log(widths);
+		// console.log(widths);
 
 		return Object.values(widths).join(', ');
 	}

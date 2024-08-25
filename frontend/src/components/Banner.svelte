@@ -5,7 +5,7 @@
 	export let heading;
 	export let subHeading;
 	export let isHomePage = false;
-	export let focalpoint;
+	export let focalpoint = null;
 
 	// console.log(image);
 	
@@ -37,8 +37,6 @@
 	.banner {
 		position: relative;
 		height: 40vh;
-
-	
 		overflow-y: hidden;
 
 		&.is-homePage {
@@ -47,7 +45,6 @@
 
 		@include breakpoints.breakpoint(large) {
 	height: 40vh;
-
 }
 	}
 
@@ -63,16 +60,7 @@
 			height: 100%;
 			background-color: black; // Color of the darkening overlay
 			opacity: 0.5; // Adjust this to control the darkness
-	
 		}
-
-/* Ensures the shadow doesn't overflow */
-
-		 img {
-    display: block;
-    width: 100%;
-  /* Ensures the image scales correctly */
-}
 
 	}
 
@@ -86,15 +74,16 @@
 		width: 100%;
 		height: 100%;
 		justify-content: center;
+		color: white;
 
 		&.is-homePage {
 			text-align: center;
+			padding-left: unset;
 		}
 
-		h1,
-		p {
+		h1{
 			margin: 0;
-			color: white;
+		
 		}
 
 	}

@@ -5,11 +5,10 @@ import Banner from '../components/Banner.svelte';
 
 	export let data;
 	const pageData = data.homePageData[0];
-	console.log(pageData);
 </script>
 
 {#if pageData}
 	<Banner image={pageData.image} heading={pageData.heading} subHeading={pageData.subHeading} isHomePage={true} focalpoint={pageData.focalpoint}/>
 	<ContentBlocks blocks={pageData.contentBlocks} />
-	<Locations />
+	<Locations locations={pageData.contact} />
 {/if}

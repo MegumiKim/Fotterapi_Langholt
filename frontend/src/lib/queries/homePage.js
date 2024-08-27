@@ -34,10 +34,11 @@ _type == "reviews" =>{
 },
 contact[]{
   title,
+  googleMapLink,
   googleMap,
   image,
   address,
-opening_hours,
+  opening_hours,
   "image":image.${asset},
   "focalPoint": image.hotspot,
 }

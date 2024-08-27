@@ -30,9 +30,9 @@
 		z-index: 1000;
 
 		position: fixed;
-
-				position: sticky;
-		background: #fff;
+		/* position: sticky; */
+		/* background: #fff; */
+		color: #fff;
 		top: 0;
 		padding-top: 2em;
 		padding-bottom: 2em;

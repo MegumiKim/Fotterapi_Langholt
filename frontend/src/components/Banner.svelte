@@ -18,12 +18,12 @@
 	<div class="img-overlay"
 	class:is-homePage={isHomePage}
 	>
-		<Image asset={image} focalPoint={null}/>
-	</div>
+	<Image asset={image} focalPoint={focalpoint}/>
 	<div class="h1-wrapper"
 	class:is-homePage={isHomePage}>
 		<h1 class="title">{heading}</h1>
 		{#if subHeading}<p>{subHeading}</p>{/if}
+	</div>
 	</div>
 </div>
 
@@ -36,15 +36,14 @@
 
 	.banner {
 		position: relative;
-		height: 40vh;
-		overflow-y: hidden;
 
 		&.is-homePage {
+			max-height: 90vh;
 			height: 100%;
 		}
 
 		@include breakpoints.breakpoint(large) {
-	height: 40vh;
+		height: 40vh;
 }
 	}
 
@@ -61,12 +60,20 @@
 			background-color: black; // Color of the darkening overlay
 			opacity: 0.5; // Adjust this to control the darkness
 		}
+			&.is-homePage {
+				max-height: 90vh;
+				height: 100%;
+				overflow-y: hidden;
+			}
 
+			@include breakpoints.breakpoint(large) {
+			height: 40vh;
+		}
 	}
 
 	.h1-wrapper {
 		position: absolute;
-		top: 0;
+		top: 25%;
 		text-align: left;
 		padding-left: var(--bleed);
 		display: flex;
@@ -83,8 +90,6 @@
 
 		h1{
 			margin: 0;
-		
 		}
-
 	}
 </style>

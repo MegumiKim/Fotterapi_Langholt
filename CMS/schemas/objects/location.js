@@ -23,6 +23,11 @@ export default defineType({
       title: 'Image',
     }),
     defineField({
+      name: 'googleMapLink',
+      type: 'url',
+      title: 'Google Map URL',
+    }),
+    defineField({
       name: 'googleMap',
       type: 'string',
       title: 'Google Map embed URL',

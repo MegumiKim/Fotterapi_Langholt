@@ -8,14 +8,13 @@
 	const siteSettings = data.siteSettings[0];
 
 	// console.log($page.route.id);
-	
+
 	let isScrollingDown = false;
 	// let isScrollingUp = false;
 	// let isAtTop = false;
 	let lastScrollY = 0;
 
 	console.log(data);
-	
 
 	function onScroll(event) {
 		const currentY = Math.max(window.pageYOffset || document.documentElement.scrollTop, 0);
@@ -25,7 +24,6 @@
 		lastScrollY = currentY;
 
 		// console.log(currentY);
-		
 
 		document.body.classList.toggle('is-scrolling-down', isScrollingDown);
 		// document.body.classList.toggle('is-scrolling-up', isScrollingUp);

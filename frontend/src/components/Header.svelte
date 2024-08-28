@@ -5,7 +5,6 @@
 	onMount(() => {
 		headerVisible = true;
 	});
-
 </script>
 
 <header class:visible={headerVisible}>
@@ -67,10 +66,10 @@
 		transform: translateY(-100%);
 	}
 	:global(.is-scrolling-up) header {
-	background: white;
-	color: #000;
+		background: white;
+		color: #000;
 	}
 	:global(.at-top) header {
-	background: none;
+		background: none;
 	}
 </style>

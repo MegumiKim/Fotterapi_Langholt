@@ -3,11 +3,13 @@
 	import ContentBlocks from '../../components/ContentBlocks.svelte';
 
 	export let data;
-	const pageData = data.pageData[0]
-	
-	
+	const pageData = data.pageData[0];
 </script>
 
-<Banner image={pageData.image} heading={pageData.heading} subHeading={pageData.subHeading} isHomePage={false}/>
+<Banner
+	image={pageData.image}
+	heading={pageData.heading}
+	subHeading={pageData.subHeading}
+	isHomePage={false}
+/>
 <ContentBlocks blocks={pageData.contentBlocks} />
-

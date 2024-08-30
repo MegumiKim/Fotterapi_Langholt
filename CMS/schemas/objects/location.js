@@ -1,21 +1,24 @@
 import {defineField, defineType} from 'sanity'
-import {ComposeIcon} from '@sanity/icons'
+import {PinIcon} from '@sanity/icons'
+import {CalendarIcon} from '@sanity/icons'
+
 export default defineType({
   name: 'location',
   type: 'object',
   title: 'Location',
-  icon: ComposeIcon,
+  icon: PinIcon,
   group: 'contact',
   fields: [
     defineField({
       name: 'title',
       type: 'string',
       title: 'Title',
+      validation: (Rule) => Rule.required(),
     }),
     defineField({
       name: 'address',
       type: 'string',
-      title: 'address',
+      title: 'Address',
     }),
     defineField({
       name: 'image',
@@ -27,36 +30,40 @@ export default defineType({
       type: 'url',
       title: 'Google Map URL',
     }),
+    // defineField({
+    //   name: 'googleMap',
+    //   type: 'string',
+    //   title: 'Google Map embed URL',
+    //   validation: (Rule) =>
+    //     Rule.custom((input) => {
+    //       if (!input) {
+    //         // If input is empty or undefined, it's valid because the field is optional
+    //         return true
+    //       }
+
+    //       // Regular expression to match the iframe tag with src attribute containing Google Maps embed URL
+    //       const googleMapEmbedUrlPattern =
+    //         /^<iframe\s+src="https:\/\/www\.google\.com\/maps\/embed\?pb=.*".*<\/iframe>$/
+
+    //       // Validate if the input matches the expected pattern
+    //       return googleMapEmbedUrlPattern.test(input)
+    //         ? true
+    //         : 'Input has to start with "<iframe src="https://www.google.com/maps/embed?pb="'
+    //     }),
+    // }),
     defineField({
-      name: 'googleMap',
+      name: 'comment',
       type: 'string',
-      title: 'Google Map embed URL',
-      validation: (Rule) =>
-        Rule.custom((input) => {
-          if (!input) {
-            // If input is empty or undefined, it's valid because the field is optional
-            return true
-          }
-
-          // Regular expression to match the iframe tag with src attribute containing Google Maps embed URL
-          const googleMapEmbedUrlPattern =
-            /^<iframe\s+src="https:\/\/www\.google\.com\/maps\/embed\?pb=.*".*<\/iframe>$/
-
-          // Validate if the input matches the expected pattern
-          return googleMapEmbedUrlPattern.test(input)
-            ? true
-            : 'Input has to start with "<iframe src="https://www.google.com/maps/embed?pb="'
-        }),
+      title: 'Additional Comment',
     }),
-
     defineField({
       name: 'opening_hours',
       type: 'array',
       title: 'Opening Hours',
       of: [
         {
-          type: 'object',
           name: 'opening_hour',
+          type: 'object',
           title: 'Opening Hour',
           fields: [
             {
@@ -65,13 +72,13 @@ export default defineType({
               title: 'Day of the week',
               options: {
                 list: [
-                  {title: 'Mandag', value: 'Monday', default: true},
-                  {title: 'Tirsdag', value: 'Tuesday'},
-                  {title: 'Onsdag', value: 'Wednesday'},
-                  {title: 'Torsdag', value: 'Thursday'},
-                  {title: 'Fredag', value: 'Friday'},
-                  {title: 'Lørdag', value: 'Saturday'},
-                  {title: 'Søndag', value: 'Sunday'},
+                  {title: 'Mandag', value: 'Mandag', default: true},
+                  {title: 'Tirsdag', value: 'Tirsdag'},
+                  {title: 'Onsdag', value: 'Onsdag'},
+                  {title: 'Torsdag', value: 'Torsdag'},
+                  {title: 'Fredag', value: 'Fredag'},
+                  {title: 'Lørdag', value: 'Lørdag'},
+                  {title: 'Søndag', value: 'Søndag'},
                 ],
               },
             },
@@ -95,6 +102,7 @@ export default defineType({
             prepare({title}) {
               return {
                 title: title,
+                media: CalendarIcon,
               }
             },
           },

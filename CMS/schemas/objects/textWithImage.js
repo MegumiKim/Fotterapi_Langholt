@@ -1,10 +1,11 @@
 import {defineType} from 'sanity'
-import {ComposeIcon} from '@sanity/icons'
+import {ClipboardImageIcon} from '@sanity/icons'
+
 export default defineType({
   name: 'textWithImage',
   type: 'object',
   title: 'Tekst med bilde',
-  icon: ComposeIcon,
+  icon: ClipboardImageIcon,
   fields: [
     {
       name: 'heading',

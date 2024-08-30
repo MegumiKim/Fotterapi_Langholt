@@ -1,11 +1,11 @@
-import {TextIcon} from '@sanity/icons'
+import {BlockContentIcon} from '@sanity/icons'
 // import link from './link'
 
 export default {
   name: 'richText',
   type: 'object',
   // title: 'Rich Text',
-  icon: TextIcon,
+  icon: BlockContentIcon,
   fields: [
     {
       name: 'text',

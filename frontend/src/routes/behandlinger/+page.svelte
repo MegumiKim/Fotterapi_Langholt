@@ -27,7 +27,7 @@
 <ContentBlocks blocks={pageData.contentBlocks} />
 
 <style lang="scss">
-	@use '$lib/styling/breakpoints';
+	/* @use '$lib/styling/breakpoints'; */
 
 	.behandlinger {
 		display: flex;

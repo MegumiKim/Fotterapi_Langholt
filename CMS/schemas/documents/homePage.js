@@ -1,10 +1,12 @@
 import {defineType, defineField} from 'sanity'
 import {getContentBlocks} from '../utils/contentBlocks.js'
+import {HomeIcon} from '@sanity/icons'
 
 export default defineType({
   name: 'homePage',
   type: 'document',
   title: 'Home',
+  icon: HomeIcon,
   options: {
     singleton: true,
   },

@@ -41,8 +41,8 @@
 </section>
 
 <style lang="scss">
-	@use '$lib/styling/breakpoints';
-	@use '$lib/styling/typography';
+	/* @use '$lib/styling/breakpoints'; */
+	/* @use '$lib/styling/typography'; */
 
 	.container {
 

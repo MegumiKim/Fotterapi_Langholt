@@ -1,17 +1,16 @@
 import {defineField, defineType} from 'sanity'
-import {ComposeIcon} from '@sanity/icons'
+import {SparklesIcon} from '@sanity/icons'
 
 export default defineType({
   name: 'treatment',
   type: 'object',
   title: 'Behandling',
-  icon: ComposeIcon,
+  icon: SparklesIcon,
   fields: [
     defineField({
       name: 'title',
       type: 'string',
       title: 'Title',
-
       validation: (Rule) => Rule.required().max(20).error('Max 20 bokstaver'),
     }),
     defineField({
@@ -36,7 +35,7 @@ export default defineType({
         {
           name: 'text',
           type: 'string',
-          title: 'Supporting text',
+          title: 'Comment',
         },
       ],
     }),

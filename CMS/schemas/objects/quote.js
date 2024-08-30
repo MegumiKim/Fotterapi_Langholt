@@ -17,18 +17,7 @@ export default defineType({
       name: 'by',
       type: 'string',
       title: 'By',
+      validation: (Rule) => Rule.required().max(50).error('Name is required'),
     }),
   ],
-  preview: {
-    select: {
-      title: 'text', // Field name for the title in the preview
-      subtitle: 'by', // Field name for the subtitle in the preview
-    },
-    prepare({title, subtitle}) {
-      return {
-        title: title,
-        subtitle: `By: ${subtitle}`,
-      }
-    },
-  },
 })

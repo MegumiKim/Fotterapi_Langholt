@@ -18,10 +18,6 @@ export default defineType({
       name: 'content',
       title: 'Content',
     },
-    {
-      name: 'contact',
-      title: 'Contact',
-    },
   ],
   fields: [
     defineField({
@@ -29,7 +25,7 @@ export default defineType({
       type: 'string',
       group: 'page',
       title: 'Overskrift',
-      validation: (Rule) => [Rule.required().max(50).error('Obligatorisk. Maks 50 bokstaver.')],
+      validation: (Rule) => [Rule.required().max(30).error('Obligatorisk. Maks 30 bokstaver.')],
     }),
     defineField({
       name: 'subHeading',

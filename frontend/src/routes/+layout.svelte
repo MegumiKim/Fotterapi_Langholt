@@ -7,14 +7,12 @@
 	export let data;
 	const siteSettings = data.siteSettings[0];
 
-	// console.log($page.route.id);
-
+	// const coryRight = siteSettings;
 	let isScrollingDown = false;
 	// let isScrollingUp = false;
 	// let isAtTop = false;
 	let lastScrollY = 0;
 
-	console.log(data);
 
 	function onScroll(event) {
 		const currentY = Math.max(window.pageYOffset || document.documentElement.scrollTop, 0);
@@ -37,4 +35,4 @@
 <main>
 	<slot />
 </main>
-<Footer />
+<Footer siteSettings={siteSettings} />

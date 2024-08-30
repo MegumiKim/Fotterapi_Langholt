@@ -30,7 +30,7 @@ export default defineType({
       group: 'page',
       title: 'Overskrift',
       description: 'Overskrift på behandlingerside.',
-      validation: (Rule) => [Rule.required().max(50).error('Obligatorisk. Maks 50 bokstaver.')],
+      validation: (Rule) => [Rule.required().max(30).error('Obligatorisk. Maks 30 bokstaver.')],
     }),
     defineField({
       name: 'subHeading',
@@ -54,6 +54,7 @@ export default defineType({
       type: 'array',
       group: 'treatments',
       title: 'List of treatments',
+      validation: (Rule) => Rule.required(),
       of: [
         {
           type: 'treatment',

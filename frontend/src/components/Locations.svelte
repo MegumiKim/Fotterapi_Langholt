@@ -2,7 +2,7 @@
 	import Image from './Image.svelte';
 
 	export let locations;
-	console.log(locations);
+	// console.log(locations);
 </script>
 
 <section class="container">
@@ -16,15 +16,22 @@
 			<div class="flex">
 				<div class="text-wrapper">
 					<h3>{location.title}</h3>
+					{#if location.address}
 					<a href={location.googleMapLink} class="address">
 						<img src="/asset/materialIcons/map.svg" alt="map icon" />
 						{location.address}
 					</a>
+					{/if}
 					<div class="opening-hours">
 						{#if location.opening_hours}
 							{#each location.opening_hours as item}
 								<p>{item.day}: <span>{item.from}:00 - {item.to}:00</span></p>
 							{/each}
+						{/if}
+					</div>
+					<div class="comment">
+						{#if location.comment}
+								<p>{location.comment}</p>
 						{/if}
 					</div>
 
@@ -65,12 +72,17 @@
 
 			.opening-hours {
 				margin-top: 2em;
-
+		
 				p{
 					margin: 0;
 					display: flex;
 					justify-content: space-between;
 					max-width: 200px;
+				}
+
+				p:last-child{
+					border-bottom: 1px solid gray;
+					padding-bottom: 1em;
 				}
 			}
 			.address {

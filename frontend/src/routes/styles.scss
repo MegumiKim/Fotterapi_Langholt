@@ -126,10 +126,6 @@ section {
 	}
 }
 
-// section:last-of-type {
-// 	border-bottom: none;
-// }
-
 //buttons
 
 button,
@@ -208,6 +204,9 @@ button:active {
 	}
 
 	@include breakpoints.breakpoint(large) {
+		--columns: 3;
+	}
+	@include breakpoints.breakpoint(xxlarge) {
 		--columns: 4;
 	}
 }

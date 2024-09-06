@@ -71,5 +71,10 @@
 	}
 	:global(.at-top) header {
 		background: none;
+		color: white;
+
+		transition:
+			color 0.5s ease;
+			background: 1s ease;
 	}
 </style>

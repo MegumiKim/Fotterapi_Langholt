@@ -6,5 +6,9 @@ export const siteSettingsQuery = groq`
     title,
     'logo':logo.${asset}, 
     orgNumber, 
-    copyright
+    phone,
+    address,
+    email,
+    facebook,
+    
 }`;

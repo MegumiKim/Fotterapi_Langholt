@@ -35,12 +35,13 @@
 
 	.flex {
 		@include breakpoints.breakpoint(large) {
-			gap: 8em;
+			gap: 4em;
+			justify-content: center;
 		}
 	}
 	.text-wrapper {
-		margin: auto;
 
+margin: auto;
 		h2 {
 			text-align: center;
 		}

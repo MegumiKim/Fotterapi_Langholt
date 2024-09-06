@@ -75,13 +75,13 @@ export default defineType({
     //
     // Footer
     //
-    defineField({
-      name: 'copyright',
-      type: 'string',
-      group: 'footer',
-      title: 'Footer Copyright',
-      description: 'Copy right text to display in the footer',
-    }),
+    // defineField({
+    //   name: 'copyright',
+    //   type: 'string',
+    //   group: 'footer',
+    //   title: 'Footer Copyright',
+    //   description: 'Copy right text to display in the footer',
+    // }),
     defineField({
       name: 'orgNumber',
       type: 'string',
@@ -89,13 +89,40 @@ export default defineType({
       title: 'Oganization number',
       description: 'Organization number to display in the footer',
     }),
+    defineField({
+      name: 'phone',
+      type: 'string',
+      group: 'footer',
+      title: 'Phone number',
+      description: 'Phone number to display in the footer',
+    }),
+    defineField({
+      name: 'address',
+      type: 'string',
+      group: 'footer',
+      title: 'Address',
+      description: 'Address of the clinic to display in the footer',
+    }),
+    defineField({
+      name: 'email',
+      type: 'email',
+      group: 'footer',
+      title: 'email',
+    }),
+    defineField({
+      name: 'facebook',
+      type: 'url',
+      group: 'footer',
+      title: 'Social Media URL',
+      description: 'URL to the FaceBook page',
+    }),
 
     defineField({
       name: 'logo',
       type: 'imageObject',
       group: 'footer',
-      title: 'Logo',
-      description: 'main image in the footer',
+      title: 'Logo of the authority',
+      description: 'Logo of the authority to display in the footer',
     }),
   ],
 })

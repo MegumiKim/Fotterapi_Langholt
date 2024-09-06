@@ -35,7 +35,7 @@ _type == "reviews" =>{
 contact[]{
   title,
   googleMapLink,
-  googleMap,
+  comment,  
   image,
   address,
   opening_hours,

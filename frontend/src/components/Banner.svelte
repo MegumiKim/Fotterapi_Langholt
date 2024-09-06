@@ -29,12 +29,11 @@
 		position: relative;
 
 		&.is-homePage {
-			max-height: 90vh;
+			max-height: 95vh;
 			height: 100%;
 		}
-
 		@include breakpoints.breakpoint(large) {
-			height: 40vh;
+			height: 50vh;
 		}
 	}
 
@@ -58,15 +57,15 @@
 		}
 
 		@include breakpoints.breakpoint(large) {
-			height: 40vh;
+			height: 50vh;
 		}
 	}
 
 	.h1-wrapper {
 		position: absolute;
-		top: 25%;
+		top: 5em;
 		text-align: left;
-		padding-left: var(--bleed);
+		padding: var(--bleed);
 		display: flex;
 		flex-direction: column;
 		width: 100%;
@@ -74,13 +73,17 @@
 		justify-content: center;
 		color: white;
 
+
 		&.is-homePage {
 			text-align: center;
-			padding-left: unset;
 		}
 
 		h1 {
 			margin: 0;
+		}
+
+		@include breakpoints.breakpoint(medium) {
+			padding-left: 5em;
 		}
 	}
 </style>

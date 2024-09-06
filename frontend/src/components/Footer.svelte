@@ -3,47 +3,57 @@
 
 	export let siteSettings;
 	console.log(siteSettings);
+
+
 	
 </script>
 
 
-<footer class="container">
+<footer class="">
 
-	<h3 class="">Fotterapi Langholt</h3>
-		<div class="inner-wrapper">
+	<div class="container inner-wrapper">
+		
+		<div class="contacts">
+				<h3 class="">{siteSettings.title || "Fotterapi Langholt"}</h3>
+				<p>{siteSettings.address || "Nansetgata 68, Larvik"}</p>
+				<p>Tel/SMS: {siteSettings.phone || "904 24 340"}</p>
+				<p>{siteSettings.phone || "post@fotterapilangholt.no"}</p>
+				<a href={siteSettings.facebook || "https://www.facebook.com/profile.php?id=100088659642036"} class="fb" target="_blank"><img src="/asset/FB.svg" alt="FB logo"> Facebook</a>
+			</div>
 			<div class="footer-right">
-				<p class="details"> Org.nr. {siteSettings.orgNumber || ""}</p>
 				<div class="logo"><Image asset={siteSettings.logo} focalPoint={null}/></div>
 			</div>
-			<div class="contacts">
-
-				<p>Nansetgata 68, Larvik</p>
-				<p>Tel/SMS: 904 24 340</p>
-				<p>post@fotterapilangholt.no</p>
-				<a href="https://www.facebook.com/profile.php?id=100088659642036" class="fb"><img src="/asset/FB.svg" alt="FB logo"> Facebook</a>
-			</div>
 		</div>
-		<p class="credit details">Designet og utviklet av Megumi</p>
-
-
-</footer>
+	</footer>
+	<p class="bottom details">Copy right 2024 |  Org.nr. {siteSettings.orgNumber || ""}</p>
 
 <style lang="scss">
 	@use '$lib/styling/typography' as typography;
 	@use '$lib/styling/breakpoints' as breakpoints;
 	@use '$lib/styling/colors';
 
-
+footer{
+	padding: 2em 0;
+}
 	.inner-wrapper {
-		@include breakpoints.breakpoint(medium){
-			display: flex;
+		display: flex;
 			justify-content: space-between;
 			gap: 2em;
-		}
+
 
 		.logo {
 			margin: auto;
-			max-width: 5em;
+	
+			@include breakpoints.breakpoint(medium){
+max-width: 7em;
+}
+		}
+		.contacts{
+			flex-shrink: 0;
+
+			h3{
+				margin: 0;
+			}
 		}
 
 		.fb{
@@ -52,20 +62,34 @@
 			}
 				display: flex;
 				align-items: center;
-				/* gap: 1em; */
+		}
+
+		a{
+			text-decoration: underline;
 		}
 
 		.footer-right{
 			margin: auto 0;
 		}
 
+.contacts{
+display: flex;
+flex-direction: column;
+gap: 0.5em;
 
+p{
+	margin: 0 0;
+}
+}
 
 	}
-	.credit{
-		color: colors.$primary;
-		margin: 2em auto;
+	.bottom{
+		background: colors.$primary;
+		color: white;
+		margin-bottom: 0;
 		text-align: center;
+		padding: 2em 0;
+
 		}
 
 </style>

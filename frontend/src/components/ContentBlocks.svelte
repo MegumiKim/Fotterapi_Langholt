@@ -1,14 +1,14 @@
 <script>
 	import Reviews from './Reviews.svelte';
 	import TextWithImageBlock from './TextWithImageBlock.svelte';
-	import Gallery from './Gallery.svelte';
+	import ProductList from './ProductList.svelte';
 
 	export let blocks = [];
 
 	const blockTypes = {
 		textWithImage: TextWithImageBlock,
 		reviews: Reviews,
-		gallery: Gallery
+		productList: ProductList
 	};
 </script>
 
@@ -26,7 +26,7 @@
 					<svelte:component this={blockTypes[type]} {...content} />
 				</div>
 			{/if}
-			{#if type === 'gallery'}
+			{#if type === 'productList'}
 				<div class="cell container--negative">
 					<svelte:component this={blockTypes[type]} {...content} />
 				</div>

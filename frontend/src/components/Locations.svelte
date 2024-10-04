@@ -17,10 +17,10 @@
 				<div class="text-wrapper">
 					<h3>{location.title}</h3>
 					{#if location.address}
-					<a href={location.googleMapLink} class="address">
-						<img src="/asset/materialIcons/map.svg" alt="map icon" />
-						{location.address}
-					</a>
+						<a href={location.googleMapLink} class="address">
+							<div class="map-icon"><img src="/asset/materialIcons/map.svg" alt="map icon" /></div>
+							{location.address}
+						</a>
 					{/if}
 					<div class="opening-hours">
 						{#if location.opening_hours}
@@ -31,10 +31,9 @@
 					</div>
 					<div class="comment">
 						{#if location.comment}
-								<p>{location.comment}</p>
+							<p>{location.comment}</p>
 						{/if}
 					</div>
-
 				</div>
 
 				{#if location.image}
@@ -52,7 +51,6 @@
 	/* @use '$lib/styling/typography'; */
 
 	.container {
-
 		h2 {
 			text-align: center;
 		}
@@ -69,18 +67,17 @@
 			margin-top: 4em;
 			max-width: 800px;
 
-
 			.opening-hours {
 				margin-top: 2em;
-		
-				p{
+
+				p {
 					margin: 0;
 					display: flex;
 					justify-content: space-between;
 					max-width: 200px;
 				}
 
-				p:last-child{
+				p:last-child {
 					border-bottom: 1px solid gray;
 					padding-bottom: 1em;
 				}
@@ -90,16 +87,17 @@
 				gap: 0.5em;
 				align-items: center;
 				margin-top: 0.5em;
-			
 			}
 
-	
-
-			.address:hover{
+			.address:hover {
 				/* border-bottom: 2px blue solid;
 				margin-bottom: -2px; */
 				text-decoration: underline;
 				color: blue;
+			}
+
+			.map-icon {
+				max-width: 2em;
 			}
 		}
 

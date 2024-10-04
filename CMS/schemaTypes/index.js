@@ -13,6 +13,7 @@ import objTextWithImage from '../schemas/objects/textWithImage.js'
 import objReviews from '../schemas/objects/reviews.js'
 import objLocation from '../schemas/objects/location.js'
 import objTreatment from '../schemas/objects/treatment.js'
+import objProductList from '../schemas/objects/productList.js'
 
 export const schemaTypes = [
   // Documents//
@@ -32,6 +33,7 @@ export const schemaTypes = [
   objReviews,
   objLocation,
   objTreatment,
+  objProductList,
   //
   // Settings
   //

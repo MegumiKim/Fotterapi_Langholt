@@ -38,20 +38,19 @@
 
 //paragraphs/captions
 @mixin paragraph {
-	font-size: 1rem;
+	font-size: 1.2rem;
 	line-height: 1.5;
 
 	@include mq(large) {
-		font-size: 1.2rem;
+		font-size: 1.3rem;
 	}
 }
 
 @mixin details {
-	// font-weight: 400;
-	font-size: 0.8rem;
+	font-size: 1rem;
 
 	@include mq(large) {
-		font-size: 1rem;
+		font-size: 1.2rem;
 	}
 }
 
@@ -68,13 +67,17 @@ h6 {
 
 h1 {
 	@include title;
-	font-family: 'Bodoni Moda SC', serif;
-	line-height: 1;
+	& {
+		font-family: 'Bodoni Moda SC', serif;
+		line-height: 1;
+	}
 }
 
 h2 {
 	@include subtitle;
-	font-family: 'Bodoni Moda SC', serif;
+	& {
+		font-family: 'Bodoni Moda SC', serif;
+	}
 }
 
 h3 {

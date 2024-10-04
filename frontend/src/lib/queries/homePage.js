@@ -1,5 +1,5 @@
 import groq from 'groq';
-import { asset } from './components.js';
+import { asset, contentBlocks } from './components.js';
 
 export const homePageQuery = groq`
 *[_type == "homePage"]
@@ -9,29 +9,7 @@ subHeading,
 'image':image.${asset},
 "focalPoint": image.hotspot,
 
-contentBlocks[]{
-
-_type == "gallery" =>{
-"type":_type,
-"content":items[]{${asset}}
-  },
-
-_type == "textWithImage" =>{
-"type":_type,
-"content":{
-  heading, 
-  "richText":text.text,
-  cta,
-'image':image.${asset},
-"focalPoint": image.hotspot}
-},
-
-_type == "reviews" =>{
-  "type" : _type,
-"content":reviews[]{by, text}
-}
-
-},
+${contentBlocks},
 contact[]{
   title,
   googleMapLink,

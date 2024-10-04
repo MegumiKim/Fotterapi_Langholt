@@ -28,7 +28,7 @@ body {
 	text-rendering: optimizeSpeed;
 	font-family: sans-serif;
 	font-size: 1rem;
-	color: #3e3e3e;
+	color: #222222;
 	background-color: #fff;
 	font-family: 'Lato', sans-serif;
 
@@ -38,8 +38,9 @@ body {
 img {
 	max-width: 100%;
 	max-height: 100%;
-	height: auto;
+	height: 100%;
 	object-fit: cover;
+	// width: 100%;
 }
 
 // grid system
@@ -66,8 +67,10 @@ $gutters: (
 
 	@each $breakpoint, $b in $bleed {
 		@include breakpoints.breakpoint($breakpoint) {
-			--bleed: #{$b};
-			--bleed-negative: #{-$b};
+			& {
+				--bleed: #{$b};
+				--bleed-negative: #{-$b};
+			}
 		}
 	}
 }
@@ -172,7 +175,7 @@ button:active {
 	--columns: 1;
 	display: grid;
 	grid-auto-flow: column;
-	align-items: end;
+	// align-items: top;
 	grid-auto-columns: calc(
 		(100vw - (var(--gutter) * (var(--columns) - 1)) - (var(--bleed) * 2)) / var(--columns)
 	);
@@ -188,9 +191,9 @@ button:active {
 			grid-column: unset !important;
 		}
 
-		.cell {
-			height: 100%;
-		}
+		// .cell {
+		// 	height: 100%;
+		// }
 	}
 
 	@include breakpoints.breakpoint(medium) {

@@ -14,7 +14,7 @@ subHeading,
       description,
       price
   },
-${contentBlocks}
+${contentBlocks},
 
 contact[]{
   title,

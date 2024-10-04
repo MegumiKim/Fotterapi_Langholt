@@ -12,7 +12,10 @@
 
 <div class="banner" class:is-homePage={isHomePage}>
 	<div class="img-overlay" class:is-homePage={isHomePage}>
-		<Image asset={image} focalPoint={focalpoint} />
+		{#if image}
+			<Image asset={image} focalPoint={focalpoint} />
+		{/if}
+
 		<div class="h1-wrapper" class:is-homePage={isHomePage}>
 			<h1 class="title">{heading}</h1>
 			{#if subHeading}<p>{subHeading}</p>{/if}
@@ -29,8 +32,8 @@
 		position: relative;
 
 		&.is-homePage {
-			max-height: 95vh;
-			height: 100%;
+			max-height: 80vh;
+			height: 80vh;
 		}
 		@include breakpoints.breakpoint(large) {
 			height: 50vh;
@@ -51,8 +54,8 @@
 			opacity: 0.5; // Adjust this to control the darkness
 		}
 		&.is-homePage {
-			max-height: 90vh;
-			height: 100%;
+			max-height: 80vh;
+			height: 80%;
 			overflow-y: hidden;
 		}
 
@@ -72,7 +75,6 @@
 		height: 100%;
 		justify-content: center;
 		color: white;
-
 
 		&.is-homePage {
 			text-align: center;

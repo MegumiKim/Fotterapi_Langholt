@@ -13,11 +13,10 @@
 	let isAtTop = false;
 	let lastScrollY = 0;
 
-
 	function onScroll(event) {
-		//Get the vertical scroll position 
+		//Get the vertical scroll position
 		const currentY = Math.max(window.pageYOffset || document.documentElement.scrollTop, 0);
-		
+
 		isScrollingDown = currentY > lastScrollY;
 		isScrollingUp = lastScrollY > currentY;
 		isAtTop = currentY === 0;
@@ -26,7 +25,6 @@
 		document.body.classList.toggle('is-scrolling-down', isScrollingDown);
 		document.body.classList.toggle('is-scrolling-up', isScrollingUp);
 		document.body.classList.toggle('at-top', isAtTop);
-
 	}
 </script>
 
@@ -36,4 +34,4 @@
 <main>
 	<slot />
 </main>
-<Footer siteSettings={siteSettings} />
+<Footer {siteSettings} />

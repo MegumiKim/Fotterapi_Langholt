@@ -15,8 +15,8 @@ export const contentBlocks = [
     type: 'reviews',
   },
   {
-    name: 'gallery',
-    type: 'gallery',
+    name: 'productList',
+    type: 'productList',
   },
   // {
   //   name: 'image',

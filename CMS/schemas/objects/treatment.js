@@ -11,7 +11,7 @@ export default defineType({
       name: 'title',
       type: 'string',
       title: 'Title',
-      validation: (Rule) => Rule.required().max(20).error('Max 20 bokstaver'),
+      validation: (Rule) => Rule.required().max(30).error('Max 30 bokstaver'),
     }),
     defineField({
       name: 'description',
@@ -23,19 +23,19 @@ export default defineType({
     defineField({
       name: 'price',
       type: 'object',
-      title: 'Price',
+      title: 'Pris',
       description: 'please provide number or text.',
       fields: [
         {
           name: 'price',
           type: 'number',
-          title: 'Price',
-          description: 'Price of the treatment',
+          title: 'Pris',
         },
         {
           name: 'text',
           type: 'string',
-          title: 'Comment',
+          title: 'kommentarer',
+          description: 'Ytterligere kommentarer',
         },
       ],
     }),

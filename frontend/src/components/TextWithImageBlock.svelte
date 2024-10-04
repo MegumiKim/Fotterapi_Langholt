@@ -40,13 +40,13 @@
 		}
 	}
 	.text-wrapper {
-
-margin: auto;
+		margin: auto;
 		h2 {
 			text-align: center;
 		}
 
 		.rich-text-wrapper {
+			text-align: center;
 			@include breakpoints.breakpoint(medium) {
 				margin: 4em auto;
 			}

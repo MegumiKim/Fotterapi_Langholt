@@ -13,11 +13,7 @@
 		<a href="/">Home</a>
 		<a href="/om">Om</a>
 		<a href="/behandlinger">Behandlinger</a>
-		<a
-			target="_blank"
-			href="https://helse.aspit.no/landing?clinicId=26d5e3e0-768c-4e24-9af8-7b34f181db8a&fbclid=IwY2xjawEnOGhleHRuA2FlbQIxMAABHYYMx6WWrAOXCYVEoNRczEKFTLNQLMU93TIhevFGtQ_WW2MzS0Vn2iTuYg_aem_9qtup80mJ93Uavt4Cbs1fQ"
-			>Bestill Time</a
-		>
+		<a href="/timebestilling">Bestill Time</a>
 	</nav>
 </header>
 
@@ -73,8 +69,7 @@
 		background: none;
 		color: white;
 
-		transition:
-			color 0.5s ease;
-			background: 1s ease;
+		transition: color 0.5s ease;
+		background: 1s ease;
 	}
 </style>

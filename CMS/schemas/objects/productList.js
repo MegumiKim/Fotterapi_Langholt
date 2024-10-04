@@ -3,9 +3,9 @@
 import {ImagesIcon} from '@sanity/icons'
 
 export default {
-  name: 'gallery',
+  name: 'productList',
   type: 'object',
-  title: 'Gallery',
+  title: 'Produktliste',
   icon: ImagesIcon,
   fields: [
     {

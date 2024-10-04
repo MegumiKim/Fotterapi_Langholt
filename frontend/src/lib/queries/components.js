@@ -24,9 +24,21 @@ asset->{
 export const contentBlocks = groq`
 contentBlocks[]{
 
-_type == "gallery" =>{
+
+_type == "productList" =>{
 "type":_type,
-"content":items[]{${asset}}
+"content":
+{
+  title,
+  subtitle,
+  
+items[]{
+${asset},
+product,
+price,
+description
+}
+}
   },
 
 _type == "textWithImage" =>{
@@ -44,5 +56,5 @@ _type == "reviews" =>{
 "content":reviews[]{by, text}
 }
 
-},
+}
 `;

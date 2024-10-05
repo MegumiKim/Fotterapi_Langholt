@@ -12,8 +12,9 @@
 
 <div class="banner" style={`height:${height}vh`}>
 	<div class="img-overlay">
-		<img src={image.url} alt="" />
-		<!-- <Image asset={image} focalPoint={focalpoint} /> -->
+		<div class="img-wrapper">
+			<Image asset={image} focalPoint={focalpoint} />
+		</div>
 	</div>
 	<div class="h1-wrapper">
 		<h1 class="title">{heading}</h1>
@@ -29,18 +30,9 @@
 		height: 90vh;
 		overflow: hidden;
 
-		@include breakpoints.breakpoint(medium) {
-			height: 80vh;
-			width: 100%;
-		}
-
-		img {
+		.img-wrapper {
 			height: 90vh;
-
-			@include breakpoints.breakpoint(medium) {
-				height: 80vh;
-				width: 100%;
-			}
+			width: 100%;
 		}
 
 		//Image overlay

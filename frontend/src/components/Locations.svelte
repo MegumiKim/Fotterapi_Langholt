@@ -78,7 +78,6 @@
 				}
 
 				p:last-child {
-					border-bottom: 1px solid gray;
 					padding-bottom: 1em;
 				}
 			}
@@ -90,10 +89,7 @@
 			}
 
 			.address:hover {
-				/* border-bottom: 2px blue solid;
-				margin-bottom: -2px; */
 				text-decoration: underline;
-				color: blue;
 			}
 
 			.map-icon {

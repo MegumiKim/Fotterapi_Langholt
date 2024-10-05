@@ -1,5 +1,6 @@
 import docHomePage from '../schemas/documents/homePage.js'
 import docAboutPage from '../schemas/documents/aboutPage.js'
+import docContactPage from '../schemas/documents/contactPage.js'
 import docTreatmentsPage from '../schemas/documents/treatmentsPage.js'
 import siteSettings from '../schemas/settings/site-settings.js'
 import objNavigationItem from '../schemas/objects/navigationItem.js'
@@ -20,6 +21,7 @@ export const schemaTypes = [
   docHomePage,
   docAboutPage,
   docTreatmentsPage,
+  docContactPage,
 
   // Objects //
   objNavigationItem,

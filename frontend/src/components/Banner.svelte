@@ -13,7 +13,9 @@
 <div class="banner" class:is-homePage={isHomePage}>
 	<div class="img-overlay" class:is-homePage={isHomePage}>
 		{#if image}
-			<Image asset={image} focalPoint={focalpoint} />
+			<div class="img-wrapper">
+				<Image asset={image} focalPoint={focalpoint} />
+			</div>
 		{/if}
 
 		<div class="h1-wrapper" class:is-homePage={isHomePage}>
@@ -30,13 +32,27 @@
 
 	.banner {
 		position: relative;
+		.img-wrapper {
+			height: 30vh;
+			width: 100%;
+		}
+
 
 		&.is-homePage {
-			max-height: 80vh;
-			height: 80vh;
+			height: 90vh;
+
+			.img-wrapper {
+			height: 90vh;
+			width: 100%;
+		}
 		}
 		@include breakpoints.breakpoint(large) {
 			height: 50vh;
+
+			.img-wrapper {
+			height: 50vh;
+			width: 100%;
+		}
 		}
 	}
 
@@ -53,15 +69,7 @@
 			background-color: black; // Color of the darkening overlay
 			opacity: 0.5; // Adjust this to control the darkness
 		}
-		&.is-homePage {
-			max-height: 80vh;
-			height: 80%;
-			overflow-y: hidden;
-		}
 
-		@include breakpoints.breakpoint(large) {
-			height: 50vh;
-		}
 	}
 
 	.h1-wrapper {

@@ -35,7 +35,7 @@
 	.behandlinger {
 		display: flex;
 		flex-direction: column;
-		gap: 2em;
+		gap: 3em;
 	}
 
 	.flex {
@@ -44,7 +44,7 @@
 			margin-top: 0;
 		}
 
-		@include breakpoints.breakpoint(large) {
+		@include breakpoints.breakpoint(medium) {
 			gap: 5em;
 
 		}

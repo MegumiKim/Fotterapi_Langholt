@@ -54,10 +54,18 @@ aspect-ratio: 1;
 			}
 		}
 		.contacts {
-			flex-shrink: 0;
+			/* flex-shrink: 0; */
+			display: flex;
+			flex-direction: column;
+			/* gap: 0.5em; */
+
+			p {
+				margin: 0 0;
+			}
 
 			h3 {
-				margin: 0;
+				margin-bottom: 0.5em;
+				margin-top: 0;
 			}
 		}
 
@@ -76,20 +84,6 @@ aspect-ratio: 1;
 				max-width: 2em;
 			}
 		}
-		.contacts {
-			display: flex;
-			flex-direction: column;
-			gap: 0.5em;
-
-			p {
-				margin: 0 0;
-			}
-		}
 	}
-	.bottom {
-		color: colors.$primary;
 
-		text-align: center;
-		padding: 0.5em 0 2em 0;
-	}
 </style>

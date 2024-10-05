@@ -101,6 +101,7 @@
 	on:pointercancel={onPointerUp}
 	class:is-grabbing={isDragging}
 	class:is-disabled={isDisabled}
+	class="scroller"
 >
 	<div
 		bind:offsetWidth={contentWidth}
@@ -116,7 +117,8 @@
 		position: relative;
 		display: block;
 		overflow-x: hidden;
-		touch-action: pan-y;
+		touch-action: pan-x;
+		padding: 0 ;
 
 		&:hover {
 			cursor: grab;

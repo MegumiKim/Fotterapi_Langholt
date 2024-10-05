@@ -9,37 +9,44 @@
 	let items = content.items || [];
 </script>
 
-<div class="container">
-	<h2>{title}</h2>
-	<p>{subtitle}</p>
-</div>
-<HorizontalScrollContainer>
-	<div class="horizontal-scroll">
-		{#each items as item}
-			<div class="product-card">
-				<Image
-					asset={item.asset}
-					focalPoint={item.focalPoint}
-					attributes={{
-						sizes: '(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw'
-					}}
-				/>
-				<h3>{item.product}</h3>
-				<p>{item.price} NOK</p>
-				<p>{item.description}</p>
-			</div>
-		{/each}
+
+	<div class="container">
+		<h2>{title}</h2>
+		<p>{subtitle}</p>
 	</div>
-</HorizontalScrollContainer>
+	<HorizontalScrollContainer>
+		<div class="horizontal-scroll">
+			{#each items as item}
+				<div class="product-card">
+					<Image
+						asset={item.asset}
+						focalPoint={item.focalPoint}
+						attributes={{
+							sizes: '(min-width: 1024px) 25vw, (min-width: 768px) 50vw, 100vw'
+						}}
+					/>
+					<h3>{item.product}</h3>
+					<p>{item.price} NOK</p>
+					<p class="details">{item.description}</p>
+				</div>
+			{/each}
+		</div>
+	</HorizontalScrollContainer>
+
 
 <style lang="scss">
 	@use '$lib/styling/breakpoints';
 
+	.container {
+		margin-top: 4em;
+	}
 	.product-card {
-		height: 70%;
+		height: 50%;
+
+	p{
+		margin: 0;
+	}
 	}
 
-	/* .product-card{
-height: 50%;
-	} */
+
 </style>

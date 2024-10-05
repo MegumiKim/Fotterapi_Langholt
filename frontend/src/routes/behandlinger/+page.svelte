@@ -15,9 +15,12 @@
 		<div class="flex">
 			<div>
 				<h2>{treatment.title}</h2>
-				{#if treatment.price.price}<p class="price">NOK {treatment.price.price}</p>
-				{/if}
-				{#if treatment.price.text}<p class="details">{treatment.price.text}</p>{/if}
+				<div class="menu-details">
+					{#if treatment.price.price}<p class="price">NOK {treatment.price.price}</p>
+					{/if}
+
+					{#if treatment.price.text}<p class="details"> {treatment.price.text}</p>{/if}
+				</div>
 			</div>
 			<div><p>{treatment.description}</p></div>
 		</div>
@@ -27,7 +30,7 @@
 <ContentBlocks blocks={pageData.contentBlocks} />
 
 <style lang="scss">
-	/* @use '$lib/styling/breakpoints'; */
+	@use '$lib/styling/breakpoints';
 
 	.behandlinger {
 		display: flex;
@@ -36,22 +39,35 @@
 	}
 
 	.flex {
+		gap: 0;
 		p {
 			margin-top: 0;
 		}
+
+		@include breakpoints.breakpoint(large) {
+			gap: 5em;
+
+		}
 	}
 
-	.price {
-		margin-top: 0.5em;
-		&:before {
-			content: '| ';
-		}
-		margin-bottom: 0;
-	}
+
 
 	h2 {
 		font-family: 'Bodoni Moda SC', serif;
 		line-height: 1em;
 		margin: 0em auto;
+	}
+
+	.menu-details{
+		display: flex;
+		 gap:1em;
+		 align-items: center;
+		 border-top: 1px solid #cccccc;
+		 margin-top: 1em;
+
+		 .details::before{
+			content: "|";
+			margin-right: 1em;
+		 }
 	}
 </style>

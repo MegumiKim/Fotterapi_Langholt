@@ -8,7 +8,7 @@
 <Banner heading="Time Bestilling" />
 <section class="container">
 	<h2>Ring / Send SMS : 904 24 340</h2>
-	<p>Welcomen!</p>
+	<p>Velcomen!</p>
 </section>
 
 <style lang="scss">

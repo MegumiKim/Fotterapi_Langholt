@@ -9,9 +9,9 @@
 	<div class="container inner-wrapper">
 		<div class="contacts">
 			<h3 class="">{siteSettings.title || 'Fotterapi Langholt'}</h3>
-			<p>{siteSettings.address || 'Nansetgata 68, Larvik'}</p>
-			<p>Tel/SMS: {siteSettings.phone || '904 24 340'}</p>
-			<p>{siteSettings.phone || 'post@fotterapilangholt.no'}</p>
+			<p class="details">{siteSettings.address || 'Nansetgata 68, Larvik'}</p>
+			<p class="details">Tel/SMS: {siteSettings.phone || '904 24 340'}</p>
+			<p class="details">{siteSettings.email || 'post@fotterapilangholt.no'}</p>
 			<a
 				href={siteSettings.facebook || 'https://www.facebook.com/profile.php?id=100088659642036'}
 				class="fb"
@@ -19,11 +19,14 @@
 			>
 		</div>
 		<div class="footer-right">
-			<div class="logo"><Image asset={siteSettings.logo} focalPoint={null} /></div>
+			<div class="logo"><Image asset={siteSettings.logo} focalPoint={null} />
+			
+			</div>
+			<p class=" details">Org.nr. {siteSettings.orgNumber || ''}</p>
 		</div>
 	</div>
 </footer>
-<p class="bottom details">Copy right 2024 | Org.nr. {siteSettings.orgNumber || ''}</p>
+
 
 <style lang="scss">
 	@use '$lib/styling/typography' as typography;
@@ -32,7 +35,8 @@
 
 	footer {
 		padding: 2em 0 1em 0;
-		border-top: 2px #b3b2b2 solid;
+		background-color: colors.$primary;
+		color: white;
 	}
 	.inner-wrapper {
 		display: flex;
@@ -42,6 +46,9 @@
 		.logo {
 			margin: auto;
 			max-width: 6em;
+border-radius: 20%;
+overflow: hidden;
+aspect-ratio: 1;
 			@include breakpoints.breakpoint(medium) {
 				max-width: 7em;
 			}
@@ -80,10 +87,9 @@
 		}
 	}
 	.bottom {
-		background: colors.$primary;
-		color: white;
-		margin-bottom: 0;
+		color: colors.$primary;
+
 		text-align: center;
-		padding: 2em 0;
+		padding: 0.5em 0 2em 0;
 	}
 </style>

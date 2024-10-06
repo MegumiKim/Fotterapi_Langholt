@@ -54,7 +54,9 @@
 
 	.img-wrapper {
 		margin: auto;
+
 	}
+
 
 	.btn-wrapper {
 		display: block;

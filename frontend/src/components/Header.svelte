@@ -13,7 +13,7 @@
 		<a href="/">Home</a>
 		<a href="/om">Om</a>
 		<a href="/behandlinger">Behandlinger</a>
-		<a href="/timebestilling">Bestill Time</a>
+		<a href="/contact">Bestill Time</a>
 	</nav>
 </header>
 

@@ -34,6 +34,13 @@ export default defineConfig({
                   .schemaType('treatmentsPage')
                   .documentId('treatmentsPage'),
               ),
+
+            S.listItem()
+              .title('Contact')
+              .child(
+                S.document().title('Contact').schemaType('contactPage').documentId('contactPage'),
+              ),
+
             S.listItem()
               .title('Siet Settings')
               .child(

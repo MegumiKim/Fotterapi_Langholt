@@ -2,6 +2,7 @@ import { createClient } from '@sanity/client';
 import { homePageQuery } from './queries/homePage.js';
 import { treatmentPageQuery } from './queries/treatmentPage.js';
 import { aboutPageQuery } from './queries/aboutPage.js';
+import { contactPageQuery } from './queries/contactPage.js';
 import { siteSettingsQuery } from './queries/siteSettings.js';
 
 export const client = createClient({
@@ -22,6 +23,9 @@ export async function getTreatmentPage() {
 }
 export async function getAboutPage() {
 	return await client.fetch(aboutPageQuery);
+}
+export async function getContactPage() {
+	return await client.fetch(contactPageQuery);
 }
 export async function getSiteSettings() {
 	return await client.fetch(siteSettingsQuery);

@@ -14,8 +14,13 @@
 			<p class="details">{siteSettings.email || 'post@fotterapilangholt.no'}</p>
 			<a
 				href={siteSettings.facebook || 'https://www.facebook.com/profile.php?id=100088659642036'}
-				class="fb"
+				class="sms"
 				target="_blank"><img src="/asset/FB.svg" alt="FB logo" /> Facebook</a
+			>
+			<a
+				href={siteSettings.facebook || 'https://www.facebook.com/profile.php?id=100088659642036'}
+				class="sms"
+				target="_blank"><img src="/asset/Insta.svg" alt="FB logo" /> Instagram</a
 			>
 		</div>
 		<div class="footer-right">
@@ -77,13 +82,15 @@ aspect-ratio: 1;
 			margin: auto 0;
 		}
 
-		.fb {
+		.sms {
 			display: flex;
 			align-items: center;
+			gap: 0.5em;
 			& img {
 				max-width: 2em;
 			}
 		}
+
 	}
 
 </style>

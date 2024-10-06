@@ -45,8 +45,8 @@
 		}
 
 		@include breakpoints.breakpoint(medium) {
+			flex-direction: row;
 			gap: 5em;
-
 		}
 	}
 

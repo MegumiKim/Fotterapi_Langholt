@@ -2,7 +2,7 @@ import {defineType, defineField} from 'sanity'
 import {getContentBlocks} from '../utils/contentBlocks.js'
 
 export default defineType({
-  name: 'aboutPage',
+  name: 'contactPage',
   type: 'document',
   title: 'Time Bestilling',
   options: {

@@ -7,7 +7,6 @@
 	export let isHomePage = false;
 	export let focalpoint = null;
 
-	// console.log(image);
 </script>
 
 <div class="banner" class:is-homePage={isHomePage}>
@@ -74,7 +73,7 @@
 
 	.h1-wrapper {
 		position: absolute;
-		top: 5em;
+		top: 2em;
 		text-align: left;
 		padding: var(--bleed);
 		display: flex;
@@ -94,6 +93,12 @@
 
 		@include breakpoints.breakpoint(medium) {
 			padding-left: 5em;
+		}
+
+		p{
+			margin: 0.5em 0;
+			font-style: italic;
+			text-wrap: balance;
 		}
 	}
 </style>

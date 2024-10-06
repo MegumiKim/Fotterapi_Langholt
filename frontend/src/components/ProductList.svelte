@@ -36,7 +36,7 @@
 							}}
 						/>
 					</div>
-					<div>
+					<div class="description">
 						<h3>{item.product}</h3>
 						<p class="details" >{item.price} NOK</p>
 						<p class="details">{item.description}</p>
@@ -66,34 +66,39 @@
 	gap: 1rem;
 	overflow-x: auto;
 	touch-action: pan-x;
-	cursor: grab;
 	scroll-behavior: smooth;
 
 
 	@include breakpoints.breakpoint(medium){
 		display: grid;
-		grid-template-columns: repeat(2, 1fr); 
+		grid-template-columns: repeat(3, 1fr); 
 		gap: 2em;
 	}
 }
 
 .item{
 min-width: calc(45% - .5rem);
-max-width:calc(45% - 3rem) ;
-aspect-ratio: 1;
+max-width:calc(45% - 3rem) ; 
 scroll-snap-align: start;
-user-select: none;
 display: flex;
 flex-direction: column;
 flex-shrink: 0;
 
+
+h3{ margin: 0.5em 0 0 0;}
 .details{
 	margin: 0;
 }
 
 .img-wrapper{
-	height: 100%;
+height: 250px;
+	@include breakpoints.breakpoint(medium){
+		height: 350px;
+	}
+
 }
+
+
 
 @include breakpoints.breakpoint(medium){
 max-width: 100%;

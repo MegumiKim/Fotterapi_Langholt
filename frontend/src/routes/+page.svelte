@@ -13,6 +13,7 @@
 		subHeading={pageData.subHeading}
 		isHomePage={true}
 		focalpoint={pageData.focalpoint}
+		scrollY
 	/>
 	<ContentBlocks blocks={pageData.contentBlocks} />
 	<Locations locations={pageData.contact} />

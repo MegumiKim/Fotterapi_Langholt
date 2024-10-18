@@ -8,8 +8,7 @@
 </script>
 
 <header class:visible={headerVisible}>
-	<!-- <a href="/" class="logo"><img src="/asset/logo.jpg" alt=""></a> -->
-	<nav>
+	<nav class="details">
 		<a href="/">Home</a>
 		<a href="/om">Om</a>
 		<a href="/behandlinger">Behandlinger</a>
@@ -18,24 +17,21 @@
 </header>
 
 <style lang="scss">
-	@use '$lib/styling/typography' as typography;
 
 	// Nav bar
 	header {
 		z-index: 1000;
 
 		position: fixed;
-		/* position: sticky; */
-		/* background: #fff; */
 		color: #fff;
 		top: 0;
-		padding-top: 2em;
-		padding-bottom: 2em;
+		padding: 2em 0;
 		width: 100%;
 		transition:
 			color 0.3s ease,
 			transform 0.5s ease;
 		transform: translateY(-100%);
+
 	}
 
 	.visible {
@@ -50,11 +46,9 @@
 	nav {
 		margin: auto;
 		display: flex;
-		/* wi<dth: 100%; */
 		justify-content: center;
 		gap: 2em;
 		font-weight: 300;
-		@include typography.details;
 	}
 
 	/* On Scroll animation */

@@ -1,5 +1,6 @@
 <script>
 	import Image from './Image.svelte';
+	import { scrollY } from '../lib/stores/scrollStore'; 
 
 	export let image;
 	export let heading;
@@ -7,17 +8,20 @@
 	export let isHomePage = false;
 	export let focalpoint = null;
 
+	// Subscribe to the scrollY store to track the scroll position
+	$scrollY = scrollY;
+
 </script>
 
-<div class="banner" class:is-homePage={isHomePage}>
+<div class="banner" class:is-homePage={isHomePage} >
 	<div class="img-overlay" class:is-homePage={isHomePage}>
 		{#if image}
-			<div class="img-wrapper">
+			<div class="img-wrapper" style="transform: translateY({$scrollY * 0.5}px)">
 				<Image asset={image} focalPoint={focalpoint} />
 			</div>
 		{/if}
 
-		<div class="h1-wrapper" class:is-homePage={isHomePage}>
+		<div class="h1-wrapper" class:is-homePage={isHomePage} style="transform: translateY({$scrollY * 0.2}px)">
 			<h1 class="title">{heading}</h1>
 			{#if subHeading}<p>{subHeading}</p>{/if}
 		</div>
@@ -31,9 +35,12 @@
 
 	.banner {
 		position: relative;
+		overflow-y: hidden;
 		.img-wrapper {
 			height: 30vh;
 			width: 100%;
+			z-index: -1;
+			position: relative;
 		}
 
 

@@ -4,11 +4,11 @@ import { asset } from './components.js';
 export const siteSettingsQuery = groq`
 *[_type == "site-settings"]{
     title,
-    'logo':logo.${asset}, 
+    description,
+    'image':image.${asset}, 
     orgNumber, 
     phone,
     address,
     email,
     facebook,
-    
 }`;

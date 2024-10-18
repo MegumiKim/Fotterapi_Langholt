@@ -18,13 +18,13 @@
 				target="_blank"><img src="/asset/FB.svg" alt="FB logo" /> Facebook</a
 			>
 			<a
-				href={siteSettings.facebook || 'https://www.facebook.com/profile.php?id=100088659642036'}
+				href={siteSettings.instagram || 'https://www.facebook.com/profile.php?id=100088659642036'}
 				class="sms"
 				target="_blank"><img src="/asset/Insta.svg" alt="FB logo" /> Instagram</a
 			>
 		</div>
 		<div class="footer-right">
-			<div class="logo"><Image asset={siteSettings.logo} focalPoint={null} />
+			<div class="logo"><img src="/asset/autorisert.jpeg" alt="Autorisert : Fotterapeut forbundet ">
 			
 			</div>
 			<p class=" details">Org.nr. {siteSettings.orgNumber || ''}</p>
@@ -34,7 +34,6 @@
 
 
 <style lang="scss">
-	@use '$lib/styling/typography' as typography;
 	@use '$lib/styling/breakpoints' as breakpoints;
 	@use '$lib/styling/colors';
 
@@ -51,9 +50,9 @@
 		.logo {
 			margin: auto;
 			max-width: 6em;
-border-radius: 20%;
-overflow: hidden;
-aspect-ratio: 1;
+			border-radius: 20%;
+			overflow: hidden;
+			aspect-ratio: 1;
 			@include breakpoints.breakpoint(medium) {
 				max-width: 7em;
 			}

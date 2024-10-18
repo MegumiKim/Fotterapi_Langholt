@@ -1,4 +1,4 @@
-import {CogIcon, LinkIcon} from '@sanity/icons'
+import {CogIcon} from '@sanity/icons'
 import {defineField, defineType} from 'sanity'
 
 export default defineType({
@@ -25,6 +25,10 @@ export default defineType({
       default: true,
     },
     {
+      name: 'seo',
+      title: 'SEO',
+    },
+    {
       name: 'header',
       title: 'Header',
     },
@@ -44,22 +48,24 @@ export default defineType({
       initialValue: 'Fotterapi Langholt',
       validation: (rule) => rule.max(20).error('Site title cannot exceed 20 characters'),
     }),
-
-    // defineField({
-    //   name: 'elevatorPitch',
-    //   type: 'string',
-    //   group: 'site',
-    //   title: 'キャッチコピー',
-    //   description: 'メインページのキャッチコピー。',
-    //   initialValue: '綺麗な脚にしましょう',
-    //   validation: (rule) => rule.max(70).error('70文字以下'),
-    // }),
-    // defineField({
-    //   name: 'seo',
-    //   type: 'seo',
-    //   group: 'site',
-    //   title: 'SEO',
-    // }),
+    defineField({
+      name: 'description',
+      type: 'text',
+      group: 'seo',
+      title: 'Side Beskribelse',
+      description: 'Description of the page for search engines. Max 160 characters.',
+      rows: 3,
+      validation: (rule) =>
+        rule.required().max(160).error('Site description cannot exceed 160 characters'),
+    }),
+    defineField({
+      name: 'image',
+      type: 'imageObject',
+      group: 'seo',
+      title: 'Thumbnail bilde',
+      description: 'Logo/bildet for thumbnail',
+      validation: (rule) => rule.required(),
+    }),
 
     //
     // Header
@@ -115,14 +121,6 @@ export default defineType({
       group: 'footer',
       title: 'Social Media URL',
       description: 'URL to the FaceBook page',
-    }),
-
-    defineField({
-      name: 'logo',
-      type: 'imageObject',
-      group: 'footer',
-      title: 'Logo of the authority',
-      description: 'Logo of the authority to display in the footer',
     }),
   ],
 })

@@ -15,6 +15,7 @@ import objReviews from '../schemas/objects/reviews.js'
 import objLocation from '../schemas/objects/location.js'
 import objTreatment from '../schemas/objects/treatment.js'
 import objProductList from '../schemas/objects/productList.js'
+import objSeo from '../schemas/objects/seo.js'
 
 export const schemaTypes = [
   // Documents//
@@ -36,6 +37,7 @@ export const schemaTypes = [
   objLocation,
   objTreatment,
   objProductList,
+  objSeo,
   //
   // Settings
   //

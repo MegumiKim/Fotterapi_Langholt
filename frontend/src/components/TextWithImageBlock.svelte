@@ -37,6 +37,7 @@
 			gap: 4em;
 			justify-content: center;
 		}
+		margin: auto;
 	}
 	.text-wrapper {
 		margin: auto;
@@ -45,7 +46,8 @@
 		}
 
 		.rich-text-wrapper {
-			text-align: center;
+			/* text-align: center; */
+			max-width: 400px;
 			@include breakpoints.breakpoint(medium) {
 				margin: 4em auto;
 			}

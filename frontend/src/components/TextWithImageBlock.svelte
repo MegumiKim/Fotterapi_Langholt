@@ -43,6 +43,8 @@
 		margin: auto;
 		h2 {
 			text-align: center;
+			font-weight: bold;
+			line-break: strict;
 		}
 
 		.rich-text-wrapper {

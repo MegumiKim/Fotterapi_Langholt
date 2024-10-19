@@ -37,7 +37,7 @@
 		position: relative;
 		overflow-y: hidden;
 		.img-wrapper {
-			height: 30vh;
+			height: 50vh;
 			width: 100%;
 			z-index: -1;
 			position: relative;
@@ -45,10 +45,10 @@
 
 
 		&.is-homePage {
-			height: 90vh;
+			height: 80vh;
 
 			.img-wrapper {
-			height: 90vh;
+			height: 80vh;
 			width: 100%;
 		}
 		}
